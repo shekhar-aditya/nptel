@@ -1021,6 +1021,17 @@ input:checked + .switch-slider::before { transform:translateX(24px); }
 
 @media (max-width: 900px) {
     .analytics-panel { width: 100%; }
+    .creators-container {
+        transform: scale(0.65);
+        opacity: 0.5;
+        z-index: 0;
+        top: calc(var(--nav-h) + 0.5rem);
+        right: 1rem;
+    }
+    body.in-quiz .creators-container {
+        transform: scale(0.5);
+        opacity: 0.3;
+    }
 }
 @media (max-width: 600px) {
     .quiz-topbar-right { flex-direction: column; align-items: flex-end; gap: 0.5rem; }
@@ -1029,4 +1040,14 @@ input:checked + .switch-slider::before { transform:translateX(24px); }
     .topic-perf-row { flex-direction: column; align-items: stretch; gap: 0.5rem; }
     .topic-perf-name { width: 100%; }
     .topic-perf-pct { width: 100%; text-align: left; }
+    .creators-container {
+        transform: scale(0.5);
+        opacity: 0.4;
+        top: calc(var(--nav-h) + 0.2rem);
+        right: 0.5rem;
+    }
+    body.in-quiz .creators-container {
+        transform: scale(0.4);
+        opacity: 0.2;
+    }
 }
