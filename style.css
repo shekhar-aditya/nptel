@@ -2477,7 +2477,7 @@ input:checked+.switch-slider::before {
 @media (max-width: 900px) {
     .creators-container, body.in-quiz .creators-container {
         transform: scale(1) !important;
-        opacity: 0.15 !important;
+        opacity: 1 !important;
         z-index: -1 !important;
         pointer-events: none !important;
         top: calc(var(--nav-h) + 1rem) !important;
@@ -2487,7 +2487,7 @@ input:checked+.switch-slider::before {
 @media (max-width: 600px) {
     .creators-container, body.in-quiz .creators-container {
         transform: scale(1) !important;
-        opacity: 0.15 !important;
+        opacity: 1 !important;
         z-index: -1 !important;
         pointer-events: none !important;
         top: calc(var(--nav-h) + 0.5rem) !important;
