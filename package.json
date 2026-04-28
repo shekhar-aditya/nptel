@@ -1,0 +1,19 @@
+{
+  "name": "nptel-esd-quiz",
+  "version": "1.0.0",
+  "description": "NPTEL Education for Sustainable Development Quiz Arena",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build step needed for static site'"
+  },
+  "keywords": [
+    "nptel",
+    "quiz",
+    "education"
+  ],
+  "author": "Aditya Shekhar, Sohan Hazra",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
+  }
+}
