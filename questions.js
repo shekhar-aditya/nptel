@@ -6,7 +6,9 @@ const questionsData = [
             "A": "True",
             "B": "False"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w10_q1",
+        "topic": "Sustainable Leadership"
     },
     {
         "assignment": 10,
@@ -17,7 +19,9 @@ const questionsData = [
             "C": "take a holistic approach",
             "D": "none of the given"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w10_q2",
+        "topic": "Sustainable Leadership"
     },
     {
         "assignment": 10,
@@ -28,7 +32,9 @@ const questionsData = [
             "C": "Party",
             "D": "Pivot"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w10_q3",
+        "topic": "Sustainable Leadership"
     },
     {
         "assignment": 10,
@@ -39,7 +45,9 @@ const questionsData = [
             "C": "oneself",
             "D": "all stakeholders"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w10_q4",
+        "topic": "Sustainable Leadership"
     },
     {
         "assignment": 10,
@@ -50,16 +58,20 @@ const questionsData = [
             "C": "integrity",
             "D": "all of the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w10_q5",
+        "topic": "Sustainable Leadership"
     },
     {
         "assignment": 10,
-        "question": "Finding ways to maintain one\u2019s ow n and others\u2019 energy is an unsustainable  leadership practice.",
+        "question": "Finding ways to maintain one’s ow n and others’ energy is an unsustainable  leadership practice.",
         "options": {
             "A": "True",
             "B": "False"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w10_q6",
+        "topic": "Sustainable Leadership"
     },
     {
         "assignment": 10,
@@ -70,7 +82,9 @@ const questionsData = [
             "C": "zoom in and out",
             "D": "none of the given"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w10_q7",
+        "topic": "Sustainable Leadership"
     },
     {
         "assignment": 10,
@@ -81,18 +95,22 @@ const questionsData = [
             "C": "living in denial",
             "D": "authentic interactions"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w10_q8",
+        "topic": "Sustainable Leadership"
     },
     {
         "assignment": 10,
-        "question": "Leadership ___ is the last challenge of  leadership; of letting go, moving on, and  planning for one\u2019s own obsolescence.",
+        "question": "Leadership ___ is the last challenge of  leadership; of letting go, moving on, and  planning for one’s own obsolescence.",
         "options": {
             "A": "succession",
             "B": "regression",
             "C": "formation",
             "D": "integration"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w10_q9",
+        "topic": "Sustainable Leadership"
     },
     {
         "assignment": 10,
@@ -103,7 +121,9 @@ const questionsData = [
             "C": "radical",
             "D": "inspirational"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w10_q10",
+        "topic": "Sustainable Leadership"
     },
     {
         "assignment": 11,
@@ -112,7 +132,9 @@ const questionsData = [
             "A": "True",
             "B": "False"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w11_q1",
+        "topic": "Global Leadership Development"
     },
     {
         "assignment": 11,
@@ -123,7 +145,9 @@ const questionsData = [
             "C": "selfish",
             "D": "consensual"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w11_q2",
+        "topic": "Global Leadership Development"
     },
     {
         "assignment": 11,
@@ -134,18 +158,22 @@ const questionsData = [
             "C": "political",
             "D": "all of the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w11_q3",
+        "topic": "Global Leadership Development"
     },
     {
         "assignment": 11,
-        "question": "The \u2018results\u2019 component of sustainable lead ership relates with the ___ dimension.",
+        "question": "The ‘results’ component of sustainable lead ership relates with the ___ dimension.",
         "options": {
             "A": "instituional",
             "B": "social",
             "C": "environmental",
             "D": "economic"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w11_q4",
+        "topic": "Global Leadership Development"
     },
     {
         "assignment": 11,
@@ -156,29 +184,35 @@ const questionsData = [
             "C": "GEAD",
             "D": "LEAD"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w11_q5",
+        "topic": "Global Leadership Development"
     },
     {
         "assignment": 11,
-        "question": "The __ component in theory \u2018U\u2019 entails prototyping the new.",
+        "question": "The __ component in theory ‘U’ entails prototyping the new.",
         "options": {
             "A": "co-evolving",
             "B": "co-initiating",
             "C": "co-sensing",
             "D": "co-creating"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w11_q6",
+        "topic": "Global Leadership Development"
     },
     {
         "assignment": 11,
         "question": "Which of the following factor does not  aid in becoming a global leader?",
         "options": {
-            "A": "willingness to stay in  one\u2019s comfort zone",
+            "A": "willingness to stay in  one’s comfort zone",
             "B": "undesirable circumstances like poverty",
             "C": "confidence to embrace risk",
             "D": "willingness to learn from failure"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w11_q7",
+        "topic": "Global Leadership Development"
     },
     {
         "assignment": 11,
@@ -189,7 +223,9 @@ const questionsData = [
             "C": "50",
             "D": "5"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w11_q8",
+        "topic": "Global Leadership Development"
     },
     {
         "assignment": 11,
@@ -200,7 +236,9 @@ const questionsData = [
             "C": "World Economic Forum",
             "D": "World Political Forum"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w11_q9",
+        "topic": "Global Leadership Development"
     },
     {
         "assignment": 11,
@@ -211,7 +249,9 @@ const questionsData = [
             "C": "11",
             "D": "5"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w11_q10",
+        "topic": "Global Leadership Development"
     },
     {
         "assignment": 12,
@@ -222,7 +262,9 @@ const questionsData = [
             "C": "Fake",
             "D": "Real"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w12_q1",
+        "topic": "Natural Resources & Consumption"
     },
     {
         "assignment": 12,
@@ -233,7 +275,9 @@ const questionsData = [
             "C": "100",
             "D": "90"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w12_q2",
+        "topic": "Natural Resources & Consumption"
     },
     {
         "assignment": 12,
@@ -244,7 +288,9 @@ const questionsData = [
             "C": "reduce food waste",
             "D": "treat wastewater before discharging"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w12_q3",
+        "topic": "Natural Resources & Consumption"
     },
     {
         "assignment": 12,
@@ -255,18 +301,22 @@ const questionsData = [
             "C": "Green Fishery Policy Network",
             "D": "Green Fiscal Policy Natural"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w12_q4",
+        "topic": "Natural Resources & Consumption"
     },
     {
         "assignment": 12,
-        "question": "As responsible consumers, we should ask ourselves \u201c___ \u201d before buying anything.",
+        "question": "As responsible consumers, we should ask ourselves “___ ” before buying anything.",
         "options": {
             "A": "do I really need it?",
             "B": "how long will I use it?",
             "C": "can I borrow it from someone I know?",
             "D": "all of the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w12_q5",
+        "topic": "Natural Resources & Consumption"
     },
     {
         "assignment": 12,
@@ -277,7 +327,9 @@ const questionsData = [
             "C": "responsible waste",
             "D": "e-waste"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w12_q6",
+        "topic": "Natural Resources & Consumption"
     },
     {
         "assignment": 12,
@@ -288,7 +340,9 @@ const questionsData = [
             "C": "6",
             "D": "11"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w12_q7",
+        "topic": "Natural Resources & Consumption"
     },
     {
         "assignment": 12,
@@ -299,7 +353,9 @@ const questionsData = [
             "C": "conflicts",
             "D": "politics"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w12_q8",
+        "topic": "Natural Resources & Consumption"
     },
     {
         "assignment": 12,
@@ -310,7 +366,9 @@ const questionsData = [
             "C": "Cotton Movement",
             "D": "Non-violent Protest"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w12_q9",
+        "topic": "Natural Resources & Consumption"
     },
     {
         "assignment": 12,
@@ -321,7 +379,9 @@ const questionsData = [
             "C": "mindfulness",
             "D": "sustainable consumption"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w12_q10",
+        "topic": "Natural Resources & Consumption"
     },
     {
         "assignment": 1,
@@ -332,7 +392,9 @@ const questionsData = [
             "C": "2012, 2050",
             "D": "2015, 2030"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w1_q1",
+        "topic": "SDGs & Global Goals"
     },
     {
         "assignment": 1,
@@ -343,7 +405,9 @@ const questionsData = [
             "C": "Success in one SDG affects success of the others",
             "D": "Only 14 out of the 17 SDGs are interconnected"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w1_q2",
+        "topic": "SDGs & Global Goals"
     },
     {
         "assignment": 1,
@@ -354,7 +418,9 @@ const questionsData = [
             "C": "Agenda 51",
             "D": "Sustainable Development Goals"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w1_q3",
+        "topic": "SDGs & Global Goals"
     },
     {
         "assignment": 1,
@@ -365,7 +431,9 @@ const questionsData = [
             "C": "World Committee on Environmental Depletion",
             "D": "World Commission on Earth Development"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w1_q4",
+        "topic": "SDGs & Global Goals"
     },
     {
         "assignment": 1,
@@ -376,7 +444,9 @@ const questionsData = [
             "C": "$10.25",
             "D": "$100.25"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w1_q5",
+        "topic": "SDGs & Global Goals"
     },
     {
         "assignment": 1,
@@ -387,7 +457,9 @@ const questionsData = [
             "C": "Multidimensional",
             "D": "Multidirectional"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w1_q6",
+        "topic": "SDGs & Global Goals"
     },
     {
         "assignment": 1,
@@ -398,7 +470,9 @@ const questionsData = [
             "C": "pollution",
             "D": "drought"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w1_q7",
+        "topic": "SDGs & Global Goals"
     },
     {
         "assignment": 1,
@@ -409,7 +483,9 @@ const questionsData = [
             "C": "proportion of undernour ished in the population",
             "D": "proportion of obese people in the population"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w1_q8",
+        "topic": "SDGs & Global Goals"
     },
     {
         "assignment": 1,
@@ -420,18 +496,22 @@ const questionsData = [
             "C": "Jal Protection Mission",
             "D": "Jal Janta Mission"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w1_q9",
+        "topic": "SDGs & Global Goals"
     },
     {
         "assignment": 1,
-        "question": "Forests cover about ___ per cent of the Earth\u2019s surface",
+        "question": "Forests cover about ___ per cent of the Earth’s surface",
         "options": {
             "A": "5",
             "B": "85",
             "C": "30",
             "D": "50"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w1_q10",
+        "topic": "SDGs & Global Goals"
     },
     {
         "assignment": 2,
@@ -442,7 +522,9 @@ const questionsData = [
             "C": "It is interdisciplinary",
             "D": "It uses only two pedagogical techniques"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w2_q1",
+        "topic": "ESD Framework & Peace Education"
     },
     {
         "assignment": 2,
@@ -453,7 +535,9 @@ const questionsData = [
             "C": "economic, social, cultural  and political development",
             "D": "only cultural development"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w2_q2",
+        "topic": "ESD Framework & Peace Education"
     },
     {
         "assignment": 2,
@@ -464,7 +548,9 @@ const questionsData = [
             "C": "only quantitative techniques",
             "D": "only qualitative methods"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w2_q3",
+        "topic": "ESD Framework & Peace Education"
     },
     {
         "assignment": 2,
@@ -475,7 +561,9 @@ const questionsData = [
             "C": "planet",
             "D": "partnership"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w2_q4",
+        "topic": "ESD Framework & Peace Education"
     },
     {
         "assignment": 2,
@@ -486,7 +574,9 @@ const questionsData = [
             "C": "forceful",
             "D": "pre-distributive"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w2_q5",
+        "topic": "ESD Framework & Peace Education"
     },
     {
         "assignment": 2,
@@ -497,7 +587,9 @@ const questionsData = [
             "C": "Both A and B",
             "D": "Neither A nor B"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w2_q6",
+        "topic": "ESD Framework & Peace Education"
     },
     {
         "assignment": 2,
@@ -508,7 +600,9 @@ const questionsData = [
             "C": "community",
             "D": "all the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w2_q7",
+        "topic": "ESD Framework & Peace Education"
     },
     {
         "assignment": 2,
@@ -519,29 +613,35 @@ const questionsData = [
             "C": "restricted",
             "D": "transformative"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w2_q8",
+        "topic": "ESD Framework & Peace Education"
     },
     {
         "assignment": 2,
-        "question": "UNESCO\u2019s World in 2030 survey revealed that respondents see ___ as one of the  top global challenges",
+        "question": "UNESCO’s World in 2030 survey revealed that respondents see ___ as one of the  top global challenges",
         "options": {
             "A": "climate change",
             "B": "hunger",
             "C": "unemployment",
             "D": "mental health"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w2_q9",
+        "topic": "ESD Framework & Peace Education"
     },
     {
         "assignment": 2,
-        "question": "Education for sustainable developmen t and peace develops people\u2019s skills to take  actions that improve our quality of life__________.",
+        "question": "Education for sustainable developmen t and peace develops people’s skills to take  actions that improve our quality of life__________.",
         "options": {
             "A": "only now",
             "B": "only for the future",
             "C": "for now and for the future",
             "D": "only for the past"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w2_q10",
+        "topic": "ESD Framework & Peace Education"
     },
     {
         "assignment": 3,
@@ -552,7 +652,9 @@ const questionsData = [
             "C": "local and non-local",
             "D": "all of the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w3_q1",
+        "topic": "Global Citizenship & Green Jobs"
     },
     {
         "assignment": 3,
@@ -563,7 +665,9 @@ const questionsData = [
             "C": "takes an active role  in their community",
             "D": "do not care much about the planet"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w3_q2",
+        "topic": "Global Citizenship & Green Jobs"
     },
     {
         "assignment": 3,
@@ -574,18 +678,22 @@ const questionsData = [
             "C": "four",
             "D": "seven"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w3_q3",
+        "topic": "Global Citizenship & Green Jobs"
     },
     {
         "assignment": 3,
-        "question": "___ is UNESCO\u2019s first Categogory 1 education -releated institute in the Asia-Pacific  region.",
+        "question": "___ is UNESCO’s first Categogory 1 education -releated institute in the Asia-Pacific  region.",
         "options": {
             "A": "MGEIN",
             "B": "MGIER",
             "C": "MGIEP",
             "D": "MGOEL"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w3_q4",
+        "topic": "Global Citizenship & Green Jobs"
     },
     {
         "assignment": 3,
@@ -596,7 +704,9 @@ const questionsData = [
             "C": "political",
             "D": "humanistic"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w3_q5",
+        "topic": "Global Citizenship & Green Jobs"
     },
     {
         "assignment": 3,
@@ -607,7 +717,9 @@ const questionsData = [
             "C": "Social and emotional learning",
             "D": "Sustainable and economic learning"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w3_q6",
+        "topic": "Global Citizenship & Green Jobs"
     },
     {
         "assignment": 3,
@@ -618,18 +730,22 @@ const questionsData = [
             "C": "role model",
             "D": "all of the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w3_q7",
+        "topic": "Global Citizenship & Green Jobs"
     },
     {
         "assignment": 3,
-        "question": "Target ___ calls for strengthening effort s to protect and safeguard the world\u2019s  cultural and natural heritage.",
+        "question": "Target ___ calls for strengthening effort s to protect and safeguard the world’s  cultural and natural heritage.",
         "options": {
             "A": "9.5",
             "B": "1.5",
             "C": "2.3",
             "D": "11.4"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w3_q8",
+        "topic": "Global Citizenship & Green Jobs"
     },
     {
         "assignment": 3,
@@ -640,18 +756,22 @@ const questionsData = [
             "C": "orange TVET",
             "D": "white TVET"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w3_q9",
+        "topic": "Global Citizenship & Green Jobs"
     },
     {
         "assignment": 3,
         "question": "Which of the fo llowing statements is not true?",
         "options": {
             "A": "green jobs contribute to pr eserving environmental quality",
-            "B": "green jobs ensure workers\u2019 rights",
+            "B": "green jobs ensure workers’ rights",
             "C": "green jobs are only found in the agriculture sector",
             "D": "green jobs must be  accessible to all"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w3_q10",
+        "topic": "Global Citizenship & Green Jobs"
     },
     {
         "assignment": 4,
@@ -662,7 +782,9 @@ const questionsData = [
             "C": "Green Enhanced Skills Occupation",
             "D": "None of the above"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w4_q1",
+        "topic": "Green Skills & Sustainable Health"
     },
     {
         "assignment": 4,
@@ -673,7 +795,9 @@ const questionsData = [
             "C": "I*NET",
             "D": "O*NET"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w4_q2",
+        "topic": "Green Skills & Sustainable Health"
     },
     {
         "assignment": 4,
@@ -684,7 +808,9 @@ const questionsData = [
             "C": "Formulating National Policies",
             "D": "Forming International Alliance"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w4_q3",
+        "topic": "Green Skills & Sustainable Health"
     },
     {
         "assignment": 4,
@@ -695,7 +821,9 @@ const questionsData = [
             "C": "Green teaching",
             "D": "Green campus"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w4_q4",
+        "topic": "Green Skills & Sustainable Health"
     },
     {
         "assignment": 4,
@@ -706,7 +834,9 @@ const questionsData = [
             "C": "green campus",
             "D": "green curriculum"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w4_q5",
+        "topic": "Green Skills & Sustainable Health"
     },
     {
         "assignment": 4,
@@ -717,7 +847,9 @@ const questionsData = [
             "C": "intra-preneurship",
             "D": "all of the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w4_q6",
+        "topic": "Green Skills & Sustainable Health"
     },
     {
         "assignment": 4,
@@ -728,7 +860,9 @@ const questionsData = [
             "C": "rigid",
             "D": "static"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w4_q7",
+        "topic": "Green Skills & Sustainable Health"
     },
     {
         "assignment": 4,
@@ -739,7 +873,9 @@ const questionsData = [
             "C": "systems thinking",
             "D": "all of the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w4_q8",
+        "topic": "Green Skills & Sustainable Health"
     },
     {
         "assignment": 4,
@@ -750,7 +886,9 @@ const questionsData = [
             "C": "social health",
             "D": "physical health"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w4_q9",
+        "topic": "Green Skills & Sustainable Health"
     },
     {
         "assignment": 4,
@@ -761,7 +899,9 @@ const questionsData = [
             "C": "a balance of mind, body and spirit",
             "D": "only about mental health"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w4_q10",
+        "topic": "Green Skills & Sustainable Health"
     },
     {
         "assignment": 5,
@@ -772,7 +912,9 @@ const questionsData = [
             "C": "indigenous system of medicine",
             "D": "private health sector"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w5_q1",
+        "topic": "Healthcare & Food Security"
     },
     {
         "assignment": 5,
@@ -783,7 +925,9 @@ const questionsData = [
             "C": "no proper regulatory mechanism",
             "D": "standard procedures in all regions"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w5_q2",
+        "topic": "Healthcare & Food Security"
     },
     {
         "assignment": 5,
@@ -794,7 +938,9 @@ const questionsData = [
             "C": "Politics",
             "D": "Service delivery"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w5_q3",
+        "topic": "Healthcare & Food Security"
     },
     {
         "assignment": 5,
@@ -805,7 +951,9 @@ const questionsData = [
             "C": "cost",
             "D": "value"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w5_q4",
+        "topic": "Healthcare & Food Security"
     },
     {
         "assignment": 5,
@@ -816,7 +964,9 @@ const questionsData = [
             "C": "health bag",
             "D": "health grid"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w5_q5",
+        "topic": "Healthcare & Food Security"
     },
     {
         "assignment": 5,
@@ -827,7 +977,9 @@ const questionsData = [
             "C": "pregnant women",
             "D": "all of the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w5_q6",
+        "topic": "Healthcare & Food Security"
     },
     {
         "assignment": 5,
@@ -838,7 +990,9 @@ const questionsData = [
             "C": "Sustainable quan tity improvement",
             "D": "Sustainable quan tity improvisation"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w5_q7",
+        "topic": "Healthcare & Food Security"
     },
     {
         "assignment": 5,
@@ -849,7 +1003,9 @@ const questionsData = [
             "C": "design the improvement effort",
             "D": "ignore the system"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w5_q8",
+        "topic": "Healthcare & Food Security"
     },
     {
         "assignment": 5,
@@ -860,7 +1016,9 @@ const questionsData = [
             "C": "FIET",
             "D": "FAIR"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w5_q9",
+        "topic": "Healthcare & Food Security"
     },
     {
         "assignment": 5,
@@ -871,7 +1029,9 @@ const questionsData = [
             "C": "3",
             "D": "2"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w5_q10",
+        "topic": "Healthcare & Food Security"
     },
     {
         "assignment": 6,
@@ -880,7 +1040,9 @@ const questionsData = [
             "A": "True",
             "B": "False"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w6_q1",
+        "topic": "Hunger & Climate Impact"
     },
     {
         "assignment": 6,
@@ -891,7 +1053,9 @@ const questionsData = [
             "C": "poor public transport infrastructure",
             "D": "lack of jobs"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w6_q2",
+        "topic": "Hunger & Climate Impact"
     },
     {
         "assignment": 6,
@@ -902,7 +1066,9 @@ const questionsData = [
             "C": "It is both a cause and effect of war",
             "D": "It is neither a cause nor an effect of war"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w6_q3",
+        "topic": "Hunger & Climate Impact"
     },
     {
         "assignment": 6,
@@ -913,7 +1079,9 @@ const questionsData = [
             "C": "adolescents",
             "D": "elderly"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w6_q4",
+        "topic": "Hunger & Climate Impact"
     },
     {
         "assignment": 6,
@@ -924,7 +1092,9 @@ const questionsData = [
             "C": "inappropriate agriculture",
             "D": "all of the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w6_q5",
+        "topic": "Hunger & Climate Impact"
     },
     {
         "assignment": 6,
@@ -935,7 +1105,9 @@ const questionsData = [
             "C": "One Nation, No Ration Card",
             "D": "One Nation, One Ration Card"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w6_q6",
+        "topic": "Hunger & Climate Impact"
     },
     {
         "assignment": 6,
@@ -946,7 +1118,9 @@ const questionsData = [
             "C": "enabled poor access to food",
             "D": "reduced distress migr ation from rural areas"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w6_q7",
+        "topic": "Hunger & Climate Impact"
     },
     {
         "assignment": 6,
@@ -957,7 +1131,9 @@ const questionsData = [
             "C": "temperature falls",
             "D": "none of the given"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w6_q8",
+        "topic": "Hunger & Climate Impact"
     },
     {
         "assignment": 6,
@@ -968,7 +1144,9 @@ const questionsData = [
             "C": "completing food box",
             "D": "wasting food basket"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w6_q9",
+        "topic": "Hunger & Climate Impact"
     },
     {
         "assignment": 6,
@@ -977,7 +1155,9 @@ const questionsData = [
             "A": "True",
             "B": "False"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w6_q10",
+        "topic": "Hunger & Climate Impact"
     },
     {
         "assignment": 7,
@@ -988,7 +1168,9 @@ const questionsData = [
             "C": "traditional biomass",
             "D": "all of the given"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w7_q1",
+        "topic": "Energy & Climate Action"
     },
     {
         "assignment": 7,
@@ -999,7 +1181,9 @@ const questionsData = [
             "C": "International",
             "D": "Intergovernmental"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w7_q2",
+        "topic": "Energy & Climate Action"
     },
     {
         "assignment": 7,
@@ -1010,7 +1194,9 @@ const questionsData = [
             "C": "replenishment of biodiversity",
             "D": "all of the given"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w7_q3",
+        "topic": "Energy & Climate Action"
     },
     {
         "assignment": 7,
@@ -1021,7 +1207,9 @@ const questionsData = [
             "C": "transport",
             "D": "forest burning"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w7_q4",
+        "topic": "Energy & Climate Action"
     },
     {
         "assignment": 7,
@@ -1032,18 +1220,22 @@ const questionsData = [
             "C": "million net energy",
             "D": "zero net energy"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w7_q5",
+        "topic": "Energy & Climate Action"
     },
     {
         "assignment": 7,
-        "question": "The term \u2018energy democracy\u2019 grew out of the ___ movement.",
+        "question": "The term ‘energy democracy’ grew out of the ___ movement.",
         "options": {
             "A": "hunger justice",
             "B": "hunger revolt",
             "C": "climate revolt",
             "D": "climate justice"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w7_q6",
+        "topic": "Energy & Climate Action"
     },
     {
         "assignment": 7,
@@ -1054,7 +1246,9 @@ const questionsData = [
             "C": "poverty",
             "D": "none of the given"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w7_q7",
+        "topic": "Energy & Climate Action"
     },
     {
         "assignment": 7,
@@ -1065,7 +1259,9 @@ const questionsData = [
             "C": "100",
             "D": "78"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w7_q8",
+        "topic": "Energy & Climate Action"
     },
     {
         "assignment": 7,
@@ -1076,7 +1272,9 @@ const questionsData = [
             "C": "January-February",
             "D": "July-August"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w7_q9",
+        "topic": "Energy & Climate Action"
     },
     {
         "assignment": 7,
@@ -1087,7 +1285,9 @@ const questionsData = [
             "C": "healthy for air quality",
             "D": "related to burning of paper"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w7_q10",
+        "topic": "Energy & Climate Action"
     },
     {
         "assignment": 8,
@@ -1098,7 +1298,9 @@ const questionsData = [
             "C": "North Korea",
             "D": "Japan"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w8_q1",
+        "topic": "ESD Competencies & Pedagogy"
     },
     {
         "assignment": 8,
@@ -1109,7 +1311,9 @@ const questionsData = [
             "C": "Exploitation of resources",
             "D": "None of the given"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w8_q2",
+        "topic": "ESD Competencies & Pedagogy"
     },
     {
         "assignment": 8,
@@ -1120,7 +1324,9 @@ const questionsData = [
             "C": "education is critical to lifting people out of poverty",
             "D": "education helps reduce gender gaps"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w8_q3",
+        "topic": "ESD Competencies & Pedagogy"
     },
     {
         "assignment": 8,
@@ -1131,7 +1337,9 @@ const questionsData = [
             "C": "11",
             "D": "45"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w8_q4",
+        "topic": "ESD Competencies & Pedagogy"
     },
     {
         "assignment": 8,
@@ -1142,7 +1350,9 @@ const questionsData = [
             "C": "silos thinking",
             "D": "systems thinking"
         },
-        "answer": "D"
+        "answer": "D",
+        "id": "w8_q5",
+        "topic": "ESD Competencies & Pedagogy"
     },
     {
         "assignment": 8,
@@ -1151,7 +1361,9 @@ const questionsData = [
             "A": "True",
             "B": "False"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w8_q6",
+        "topic": "ESD Competencies & Pedagogy"
     },
     {
         "assignment": 8,
@@ -1162,7 +1374,9 @@ const questionsData = [
             "C": "Global Attention Programme",
             "D": "Great Action Policy"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w8_q7",
+        "topic": "ESD Competencies & Pedagogy"
     },
     {
         "assignment": 8,
@@ -1173,7 +1387,9 @@ const questionsData = [
             "C": "strategic",
             "D": "collaborative"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w8_q8",
+        "topic": "ESD Competencies & Pedagogy"
     },
     {
         "assignment": 8,
@@ -1184,18 +1400,22 @@ const questionsData = [
             "C": "anticipatory",
             "D": "self-awareness"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w8_q9",
+        "topic": "ESD Competencies & Pedagogy"
     },
     {
         "assignment": 8,
-        "question": "Action-oriented learning draws on Kolb\u2019s concept of ___.",
+        "question": "Action-oriented learning draws on Kolb’s concept of ___.",
         "options": {
             "A": "experiential learning",
             "B": "experimental learning",
             "C": "rote learning",
             "D": "direct learning"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w8_q10",
+        "topic": "ESD Competencies & Pedagogy"
     },
     {
         "assignment": 9,
@@ -1206,7 +1426,9 @@ const questionsData = [
             "C": "rote-memory",
             "D": "all of the given"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w9_q1",
+        "topic": "Transformative Learning"
     },
     {
         "assignment": 9,
@@ -1217,7 +1439,9 @@ const questionsData = [
             "C": "science fiction thinking",
             "D": "dystopian storytelling"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w9_q2",
+        "topic": "Transformative Learning"
     },
     {
         "assignment": 9,
@@ -1228,7 +1452,9 @@ const questionsData = [
             "C": "intrapersonal",
             "D": "institutional"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w9_q3",
+        "topic": "Transformative Learning"
     },
     {
         "assignment": 9,
@@ -1239,18 +1465,22 @@ const questionsData = [
             "C": "double",
             "D": "triple"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w9_q4",
+        "topic": "Transformative Learning"
     },
     {
         "assignment": 9,
-        "question": "___intelligence refers to usin g one\u2019s body in skilled ways.",
+        "question": "___intelligence refers to usin g one’s body in skilled ways.",
         "options": {
             "A": "kinesthetic",
             "B": "musical",
             "C": "naturalist",
             "D": "spatial"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w9_q5",
+        "topic": "Transformative Learning"
     },
     {
         "assignment": 9,
@@ -1261,7 +1491,9 @@ const questionsData = [
             "C": "ignorance of others",
             "D": "none of the given"
         },
-        "answer": "B"
+        "answer": "B",
+        "id": "w9_q6",
+        "topic": "Transformative Learning"
     },
     {
         "assignment": 9,
@@ -1272,7 +1504,9 @@ const questionsData = [
             "C": "trivial",
             "D": "trans-disciplinary"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w9_q7",
+        "topic": "Transformative Learning"
     },
     {
         "assignment": 9,
@@ -1283,7 +1517,9 @@ const questionsData = [
             "C": "boredom",
             "D": "none of the given"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w9_q8",
+        "topic": "Transformative Learning"
     },
     {
         "assignment": 9,
@@ -1294,7 +1530,9 @@ const questionsData = [
             "C": "Participatory",
             "D": "Transformational"
         },
-        "answer": "C"
+        "answer": "C",
+        "id": "w9_q9",
+        "topic": "Transformative Learning"
     },
     {
         "assignment": 9,
@@ -1305,6 +1543,8 @@ const questionsData = [
             "C": "AIIMS",
             "D": "None of the given"
         },
-        "answer": "A"
+        "answer": "A",
+        "id": "w9_q10",
+        "topic": "Transformative Learning"
     }
 ];
