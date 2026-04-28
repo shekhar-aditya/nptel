@@ -2477,8 +2477,22 @@ input:checked+.switch-slider::before {
 .mobile-only { display: none !important; }
 
 @media (max-width: 900px) {
-    .desktop-only { display: none !important; }
+    /* Hide the global card ONLY on the hero page since it has the embedded mobile one */
+    body[data-active-section="hero"] .creators-container.global-card {
+        display: none !important;
+    }
     
+    /* When not on hero page, the global card acts as a watermark */
+    body:not([data-active-section="hero"]) .creators-container.global-card {
+        transform: scale(1) !important;
+        opacity: 1 !important;
+        z-index: -1 !important;
+        pointer-events: none !important;
+        top: calc(var(--nav-h) + 1rem) !important;
+        right: 1rem !important;
+    }
+    
+    /* Embedded Hero Mobile Card */
     .creators-container.mobile-only {
         display: flex !important;
         position: static !important;
@@ -2499,7 +2513,13 @@ input:checked+.switch-slider::before {
     }
 }
 @media (max-width: 600px) {
-    .desktop-only { display: none !important; }
+    body[data-active-section="hero"] .creators-container.global-card {
+        display: none !important;
+    }
+    body:not([data-active-section="hero"]) .creators-container.global-card {
+        top: calc(var(--nav-h) + 0.5rem) !important;
+        right: 0.5rem !important;
+    }
     .creators-container.mobile-only {
         margin: 1.5rem 0 !important;
     }
