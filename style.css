@@ -2473,24 +2473,34 @@ input:checked+.switch-slider::before {
     }
 }
 
-/* Mobile Adjustments for Creator Cards - Background Watermark Style */
+/* Creator Cards Responsive Handling */
+.mobile-only { display: none !important; }
+
 @media (max-width: 900px) {
-    .creators-container, body.in-quiz .creators-container {
-        transform: scale(1) !important;
+    .desktop-only { display: none !important; }
+    
+    .creators-container.mobile-only {
+        display: flex !important;
+        position: static !important;
+        transform: none !important;
         opacity: 1 !important;
-        z-index: -1 !important;
-        pointer-events: none !important;
-        top: calc(var(--nav-h) + 1rem) !important;
-        right: 1rem !important;
+        z-index: 1 !important;
+        pointer-events: auto !important;
+        margin: 2rem 0 !important;
+        align-items: center !important;
+        width: 100%;
+    }
+    .creators-container.mobile-only .creator-cards {
+        justify-content: center !important;
+        width: 100%;
+    }
+    .creators-container.mobile-only .creator-label {
+        margin: 0 auto 0.5rem auto !important;
     }
 }
 @media (max-width: 600px) {
-    .creators-container, body.in-quiz .creators-container {
-        transform: scale(1) !important;
-        opacity: 1 !important;
-        z-index: -1 !important;
-        pointer-events: none !important;
-        top: calc(var(--nav-h) + 0.5rem) !important;
-        right: 0.5rem !important;
+    .desktop-only { display: none !important; }
+    .creators-container.mobile-only {
+        margin: 1.5rem 0 !important;
     }
 }
