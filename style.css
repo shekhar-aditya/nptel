@@ -2492,6 +2492,14 @@ input:checked+.switch-slider::before {
         right: 1rem !important;
     }
     
+    /* Shrink aggressively during the quiz to free up screen space */
+    body.in-quiz .creators-container.global-card {
+        transform: scale(0.45) !important;
+        opacity: 0.7 !important;
+        top: calc(var(--nav-h) + 0.25rem) !important;
+        right: 0.25rem !important;
+    }
+    
     /* Embedded Hero Mobile Card */
     .creators-container.mobile-only {
         display: flex !important;
@@ -2519,6 +2527,12 @@ input:checked+.switch-slider::before {
     body:not([data-active-section="hero"]) .creators-container.global-card {
         top: calc(var(--nav-h) + 0.5rem) !important;
         right: 0.5rem !important;
+    }
+    body.in-quiz .creators-container.global-card {
+        transform: scale(0.35) !important;
+        opacity: 0.6 !important;
+        top: calc(var(--nav-h) + 0.15rem) !important;
+        right: 0.15rem !important;
     }
     .creators-container.mobile-only {
         margin: 1.5rem 0 !important;
