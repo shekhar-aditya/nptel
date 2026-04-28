@@ -1,0 +1,1310 @@
+[
+    {
+        "assignment": 10,
+        "question": "Sustainable leaders look at immediate, short-term gains.",
+        "options": {
+            "A": "True",
+            "B": "False"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 10,
+        "question": "The need of the hour is to have leaders who ___.",
+        "options": {
+            "A": "focus only on business profit",
+            "B": "focus only on building technical solutions",
+            "C": "take a holistic approach",
+            "D": "none of the given"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 10,
+        "question": "Which of the following is a part  of the 3Ps of triple bottom line?",
+        "options": {
+            "A": "Profit",
+            "B": "Passion",
+            "C": "Party",
+            "D": "Pivot"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 10,
+        "question": "Organizations need leaders who create value for ___.",
+        "options": {
+            "A": "internal stakeholders",
+            "B": "external stakeholders",
+            "C": "oneself",
+            "D": "all stakeholders"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 10,
+        "question": "The sustainability mind set involves ___.",
+        "options": {
+            "A": "transparency",
+            "B": "presencing",
+            "C": "integrity",
+            "D": "all of the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 10,
+        "question": "Finding ways to maintain one\u2019s ow n and others\u2019 energy is an unsustainable  leadership practice.",
+        "options": {
+            "A": "True",
+            "B": "False"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 10,
+        "question": "Systems thinking is often high lighted by the ability to ___.",
+        "options": {
+            "A": "zoom in",
+            "B": "zoom out",
+            "C": "zoom in and out",
+            "D": "none of the given"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 10,
+        "question": "Practicing consciousness awareness includes ___.",
+        "options": {
+            "A": "ignoring self with others",
+            "B": "forgetting about what has happened and moving on",
+            "C": "living in denial",
+            "D": "authentic interactions"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 10,
+        "question": "Leadership ___ is the last challenge of  leadership; of letting go, moving on, and  planning for one\u2019s own obsolescence.",
+        "options": {
+            "A": "succession",
+            "B": "regression",
+            "C": "formation",
+            "D": "integration"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 10,
+        "question": "__leadership is also called missionary leadership and is different from quiet  leadership.",
+        "options": {
+            "A": "participative",
+            "B": "servant",
+            "C": "radical",
+            "D": "inspirational"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 11,
+        "question": "There is one universal curriculum to become a sustainable leader.",
+        "options": {
+            "A": "True",
+            "B": "False"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 11,
+        "question": "A sustainable leader has a ___ decision-making style.",
+        "options": {
+            "A": "forceful",
+            "B": "autocratic",
+            "C": "selfish",
+            "D": "consensual"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 11,
+        "question": "A sustainable leader must have awareness of ___ contexts.",
+        "options": {
+            "A": "ecological",
+            "B": "economic",
+            "C": "political",
+            "D": "all of the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 11,
+        "question": "The \u2018results\u2019 component of sustainable lead ership relates with the ___ dimension.",
+        "options": {
+            "A": "instituional",
+            "B": "social",
+            "C": "environmental",
+            "D": "economic"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 11,
+        "question": "___ India gives a theory U that consists of aspects like co-initiating, co-sensing and co- evolving among others.",
+        "options": {
+            "A": "HEAD",
+            "B": "SAID",
+            "C": "GEAD",
+            "D": "LEAD"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 11,
+        "question": "The __ component in theory \u2018U\u2019 entails prototyping the new.",
+        "options": {
+            "A": "co-evolving",
+            "B": "co-initiating",
+            "C": "co-sensing",
+            "D": "co-creating"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 11,
+        "question": "Which of the following factor does not  aid in becoming a global leader?",
+        "options": {
+            "A": "willingness to stay in  one\u2019s comfort zone",
+            "B": "undesirable circumstances like poverty",
+            "C": "confidence to embrace risk",
+            "D": "willingness to learn from failure"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 11,
+        "question": "According to Maxwell, there are ___ levels of leadership.",
+        "options": {
+            "A": "15",
+            "B": "25",
+            "C": "50",
+            "D": "5"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 11,
+        "question": "The ___, in relation to th eir Global Leadership Fellows hip program, describes global  leaders as dynamic, engaged and driven individuals who possess a high degree of  intellectual curiosity and service-oriented humility; an entrepreneur in the global public  interest with a profound sense of purpose  regardless of the scale and scope of the  challenge.",
+        "options": {
+            "A": "World Health Organization",
+            "B": "World Labor Organization",
+            "C": "World Economic Forum",
+            "D": "World Political Forum"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 11,
+        "question": "SDG ___ is to make cities and human se ttlements inclusive, safe, resilient, and  sustainable.",
+        "options": {
+            "A": "2",
+            "B": "10",
+            "C": "11",
+            "D": "5"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 12,
+        "question": "___resources are those that exist in  the absence of human intervention.",
+        "options": {
+            "A": "Artificial",
+            "B": "Natural",
+            "C": "Fake",
+            "D": "Real"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 12,
+        "question": "The food sector accounts for around ___ pe rcent of total greenhouse gas emissions.",
+        "options": {
+            "A": "3",
+            "B": "22",
+            "C": "100",
+            "D": "90"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 12,
+        "question": "Which of the following is not a solution for natural resource depletion?",
+        "options": {
+            "A": "use less renewable energy",
+            "B": "promote sustainable fishing growth",
+            "C": "reduce food waste",
+            "D": "treat wastewater before discharging"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 12,
+        "question": "In order to support reform on green fiscal policy, UN Envi ronment has established the  ___ in partnership with the International Monetary Fund.",
+        "options": {
+            "A": "Green Fiscal Policy Network",
+            "B": "Blue Fiscal Policy Network",
+            "C": "Green Fishery Policy Network",
+            "D": "Green Fiscal Policy Natural"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 12,
+        "question": "As responsible consumers, we should ask ourselves \u201c___ \u201d before buying anything.",
+        "options": {
+            "A": "do I really need it?",
+            "B": "how long will I use it?",
+            "C": "can I borrow it from someone I know?",
+            "D": "all of the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 12,
+        "question": "A bulb thrown out af ter usage forms __.",
+        "options": {
+            "A": "wet waste",
+            "B": "valuable waste",
+            "C": "responsible waste",
+            "D": "e-waste"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 12,
+        "question": "SDG ___ seeks to promote international trad e, and help developing countries increase  their exports to ensure a unive rsal rules-based and equitable trading system that is fair,  open and beneficial to all.",
+        "options": {
+            "A": "17",
+            "B": "2",
+            "C": "6",
+            "D": "11"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 12,
+        "question": "According to Gandhiji, wealth  should be used for ___.",
+        "options": {
+            "A": "the betterment of the humanity",
+            "B": "personal indulgence",
+            "C": "conflicts",
+            "D": "politics"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 12,
+        "question": "The ___ initiated and spearhead ed by Gandhiji is the preemi nent prototype of small and  cottage industries. Strengt hening village economy, a nd thus, reducing excessive  urbanization can make hum an settlements safe, resilient and sustainable.",
+        "options": {
+            "A": "Khadi Movement",
+            "B": "Salt March",
+            "C": "Cotton Movement",
+            "D": "Non-violent Protest"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 12,
+        "question": "___ is the ability of a system  to absorb disturbances & retain its basic function and  structure.",
+        "options": {
+            "A": "resilience",
+            "B": "gratitude",
+            "C": "mindfulness",
+            "D": "sustainable consumption"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 1,
+        "question": "The Global Goals were adopted by all Unit ed Nations member states in ___ as a  universal call to action to end poverty, protect the planet and ensure that all people  enjoy peace and prosperity by ___.",
+        "options": {
+            "A": "2025, 2080",
+            "B": "2020, 2060",
+            "C": "2012, 2050",
+            "D": "2015, 2030"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 1,
+        "question": "Which of the following is true?",
+        "options": {
+            "A": "The SDGs are a bold commitment to  solely increase the GDP of India",
+            "B": "Dealing with climate c hange has no impact on gender equality",
+            "C": "Success in one SDG affects success of the others",
+            "D": "Only 14 out of the 17 SDGs are interconnected"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 1,
+        "question": "In June 1992, at the Earth Summit in  Rio de Janeiro, Brazil, more than 178  countries adopted ___.",
+        "options": {
+            "A": "Agenda 21",
+            "B": "Millennium Development Goals",
+            "C": "Agenda 51",
+            "D": "Sustainable Development Goals"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 1,
+        "question": "Brundtland Report was released in 1987 by the WCED. WCED stands for ___.",
+        "options": {
+            "A": "World Commission on Environment Degradation",
+            "B": "World Commission on Environment and Development",
+            "C": "World Committee on Environmental Depletion",
+            "D": "World Commission on Earth Development"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 1,
+        "question": "Extreme poverty means living on less than ___ a day.",
+        "options": {
+            "A": "$1.25",
+            "B": "$4.25",
+            "C": "$10.25",
+            "D": "$100.25"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 1,
+        "question": "___ poverty measures reveal who is poor and how they are poor.",
+        "options": {
+            "A": "Unidimensional",
+            "B": "Bidirectional",
+            "C": "Multidimensional",
+            "D": "Multidirectional"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 1,
+        "question": "SDG 2 aims end all forms of ___ by 2030.",
+        "options": {
+            "A": "crime",
+            "B": "hunger and malnutrition",
+            "C": "pollution",
+            "D": "drought"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 1,
+        "question": "Which of the following is not one of the indicators of  the Global Hunder Index?",
+        "options": {
+            "A": "prevalence of wasting and st unting in children under 5 years",
+            "B": "under 5 child mortality rate",
+            "C": "proportion of undernour ished in the population",
+            "D": "proportion of obese people in the population"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 1,
+        "question": "As per Ministry of Housi ng and Urban Affairs, 135 litre per capita per day (lpcd) has  been suggested as the benchmark for urban wate r supply. For rural areas, a minimum  service delivery of 55 lpcd has been fixed under___.",
+        "options": {
+            "A": "Jal Jeevan Mission",
+            "B": "Jal Shakti Mission",
+            "C": "Jal Protection Mission",
+            "D": "Jal Janta Mission"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 1,
+        "question": "Forests cover about ___ per cent of the Earth\u2019s surface",
+        "options": {
+            "A": "5",
+            "B": "85",
+            "C": "30",
+            "D": "50"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 2,
+        "question": "Which of the following is a characteristic of ESD as described in the framework?",
+        "options": {
+            "A": "It is not locally relevant",
+            "B": "It promotes learning only for children",
+            "C": "It is interdisciplinary",
+            "D": "It uses only two pedagogical techniques"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 2,
+        "question": "The Declaration on the Right to Developm ent (1986) established that everyone is  entitled to participate in and enjoy:",
+        "options": {
+            "A": "only economic and social development",
+            "B": "economic, political, psycholog ical and communist development",
+            "C": "economic, social, cultural  and political development",
+            "D": "only cultural development"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 2,
+        "question": "Text based methods for assessing ESD pr ograms can be improved by using ___.",
+        "options": {
+            "A": "interpretive methodologies",
+            "B": "strict curriculum",
+            "C": "only quantitative techniques",
+            "D": "only qualitative methods"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 2,
+        "question": "SDGS are for the following except ___.",
+        "options": {
+            "A": "people",
+            "B": "practice",
+            "C": "planet",
+            "D": "partnership"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 2,
+        "question": "Policies like employment and labor rights , care and family leves, and financial  regulation are often ca lled the ___ policies.",
+        "options": {
+            "A": "post-regulation",
+            "B": "self-care",
+            "C": "forceful",
+            "D": "pre-distributive"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 2,
+        "question": "Which of the following is involved in  the development of the HRE indicator  framework to measure progress on nat ional implementation of human rights  education.",
+        "options": {
+            "A": "Danish Institut e of Human Rights",
+            "B": "The Office of the High Commissioner for Human Rights",
+            "C": "Both A and B",
+            "D": "Neither A nor B"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 2,
+        "question": "___ plays a role in peace education.",
+        "options": {
+            "A": "schools",
+            "B": "parents",
+            "C": "community",
+            "D": "all the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 2,
+        "question": "The enterprise of education at  its most prof ound level is ___.",
+        "options": {
+            "A": "discriminatory",
+            "B": "selective",
+            "C": "restricted",
+            "D": "transformative"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 2,
+        "question": "UNESCO\u2019s World in 2030 survey revealed that respondents see ___ as one of the  top global challenges",
+        "options": {
+            "A": "climate change",
+            "B": "hunger",
+            "C": "unemployment",
+            "D": "mental health"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 2,
+        "question": "Education for sustainable developmen t and peace develops people\u2019s skills to take  actions that improve our quality of life__________.",
+        "options": {
+            "A": "only now",
+            "B": "only for the future",
+            "C": "for now and for the future",
+            "D": "only for the past"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 3,
+        "question": "Global citizenship is a belief that i ndividuals are member s of ___ networks.",
+        "options": {
+            "A": "multiple",
+            "B": "diverse",
+            "C": "local and non-local",
+            "D": "all of the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 3,
+        "question": "A global citizen ___.",
+        "options": {
+            "A": "is not aware of the wider world",
+            "B": "is confused about their place in the world",
+            "C": "takes an active role  in their community",
+            "D": "do not care much about the planet"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 3,
+        "question": "Global citizenship education is  based on ___ domains of learning.",
+        "options": {
+            "A": "three",
+            "B": "two",
+            "C": "four",
+            "D": "seven"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 3,
+        "question": "___ is UNESCO\u2019s first Categogory 1 education -releated institute in the Asia-Pacific  region.",
+        "options": {
+            "A": "MGEIN",
+            "B": "MGIER",
+            "C": "MGIEP",
+            "D": "MGOEL"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 3,
+        "question": "SDG target 4.7 rearticu lates a  ____ agenda for education.",
+        "options": {
+            "A": "regional",
+            "B": "behavioral",
+            "C": "political",
+            "D": "humanistic"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 3,
+        "question": "SEL stands for________.",
+        "options": {
+            "A": "Sustainable educ ation and learning",
+            "B": "Social and envir onmental learning",
+            "C": "Social and emotional learning",
+            "D": "Sustainable and economic learning"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 3,
+        "question": "Which of the following is a role taken by a teacher in education for sustainable  development?",
+        "options": {
+            "A": "facilitator",
+            "B": "guide",
+            "C": "role model",
+            "D": "all of the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 3,
+        "question": "Target ___ calls for strengthening effort s to protect and safeguard the world\u2019s  cultural and natural heritage.",
+        "options": {
+            "A": "9.5",
+            "B": "1.5",
+            "C": "2.3",
+            "D": "11.4"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 3,
+        "question": "The UNESCO International  Centre for Technical a nd Vocational Education and  Training enables ___ in member states.",
+        "options": {
+            "A": "green TVET",
+            "B": "blue TVET",
+            "C": "orange TVET",
+            "D": "white TVET"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 3,
+        "question": "Which of the fo llowing statements is not true?",
+        "options": {
+            "A": "green jobs contribute to pr eserving environmental quality",
+            "B": "green jobs ensure workers\u2019 rights",
+            "C": "green jobs are only found in the agriculture sector",
+            "D": "green jobs must be  accessible to all"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 4,
+        "question": "GESO stands for ___.",
+        "options": {
+            "A": "Green Education for Sustainable Occupation",
+            "B": "Green Enhanced Su stainable Occupation",
+            "C": "Green Enhanced Skills Occupation",
+            "D": "None of the above"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 4,
+        "question": "The classification of occupations in to GIDO, GESO and GNEO is given by  US National Center for ___ .",
+        "options": {
+            "A": "G*NET",
+            "B": "A*NET",
+            "C": "I*NET",
+            "D": "O*NET"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 4,
+        "question": "The International Framework for Gree ning TVET consists of the following  tiers, except ___.",
+        "options": {
+            "A": "Breaking TVET institutions",
+            "B": "Transforming TVET institutions",
+            "C": "Formulating National Policies",
+            "D": "Forming International Alliance"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 4,
+        "question": "Energy, water and wast e management comes under  the ___ dimension of  Greening TVET.",
+        "options": {
+            "A": "Green research",
+            "B": "Green culture",
+            "C": "Green teaching",
+            "D": "Green campus"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 4,
+        "question": "Industry-institute interaction  is an indica tor of ___.",
+        "options": {
+            "A": "green house",
+            "B": "green teaching",
+            "C": "green campus",
+            "D": "green curriculum"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 4,
+        "question": "Sustainable entrepreneurship includes ___.",
+        "options": {
+            "A": "social entrepreneurship",
+            "B": "eco-preneurship",
+            "C": "intra-preneurship",
+            "D": "all of the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 4,
+        "question": "ESD requires ___ learning methods.",
+        "options": {
+            "A": "participatory",
+            "B": "passive",
+            "C": "rigid",
+            "D": "static"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 4,
+        "question": "Which of the following is  a transversal competency?",
+        "options": {
+            "A": "creativity",
+            "B": "empathy",
+            "C": "systems thinking",
+            "D": "all of the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 4,
+        "question": "___ is the ability to cr eate good relationsh ips and adapt to different social  situations.",
+        "options": {
+            "A": "emotional fitness",
+            "B": "mental health",
+            "C": "social health",
+            "D": "physical health"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 4,
+        "question": "Sustainable health is ___.",
+        "options": {
+            "A": "a curative approach",
+            "B": "only about the body",
+            "C": "a balance of mind, body and spirit",
+            "D": "only about mental health"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 5,
+        "question": "Siddha comes under the ___.",
+        "options": {
+            "A": "public health sector",
+            "B": "voluntary health agencies",
+            "C": "indigenous system of medicine",
+            "D": "private health sector"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 5,
+        "question": "Which of the following is not a problem of healthcare infrastructure in India?",
+        "options": {
+            "A": "shortage of staff",
+            "B": "skewed favor to urban areas",
+            "C": "no proper regulatory mechanism",
+            "D": "standard procedures in all regions"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 5,
+        "question": "Which of the following is  a health system building bl ock as suggested by WHO?",
+        "options": {
+            "A": "Economic growth",
+            "B": "Access to public transport",
+            "C": "Politics",
+            "D": "Service delivery"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 5,
+        "question": "An ecologically sustainable approa ch broadens the de finition of ___.",
+        "options": {
+            "A": "objective",
+            "B": "outcome",
+            "C": "cost",
+            "D": "value"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 5,
+        "question": "A ___ is an environment in which data of  medical interest can be stored and made  easily available.",
+        "options": {
+            "A": "health repository",
+            "B": "health bank",
+            "C": "health bag",
+            "D": "health grid"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 5,
+        "question": "The POSHAN Abhiyan in India aims to improve nutritional outcomes for ___.",
+        "options": {
+            "A": "children",
+            "B": "lactating mothers",
+            "C": "pregnant women",
+            "D": "all of the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 5,
+        "question": "Sus-QI stands for ___.",
+        "options": {
+            "A": "Sustainable quality improvement",
+            "B": "Sustainable qua lity improvisation",
+            "C": "Sustainable quan tity improvement",
+            "D": "Sustainable quan tity improvisation"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 5,
+        "question": "Which of the following is not a stage of Sus-QI?",
+        "options": {
+            "A": "set goals",
+            "B": "measure impacts",
+            "C": "design the improvement effort",
+            "D": "ignore the system"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 5,
+        "question": "Food insecurity is measured on the ___.",
+        "options": {
+            "A": "FIES",
+            "B": "FAIS",
+            "C": "FIET",
+            "D": "FAIR"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 5,
+        "question": "The UN lists ___ levels of food  security for any given country.",
+        "options": {
+            "A": "5",
+            "B": "4",
+            "C": "3",
+            "D": "2"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 6,
+        "question": "Poor infrastructure can cau se hunger in a country.",
+        "options": {
+            "A": "True",
+            "B": "False"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 6,
+        "question": "In high income countries, h unger is mainly caused due to poverty that results from  ___.",
+        "options": {
+            "A": "low GDP of the country",
+            "B": "lack of access to food",
+            "C": "poor public transport infrastructure",
+            "D": "lack of jobs"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 6,
+        "question": "Which of the following is true about hunger?",
+        "options": {
+            "A": "It is a cause of war",
+            "B": "It is an effect of war",
+            "C": "It is both a cause and effect of war",
+            "D": "It is neither a cause nor an effect of war"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 6,
+        "question": "___ are most vulnerable to the harmful effects of hidden hunger.",
+        "options": {
+            "A": "adults",
+            "B": "infants",
+            "C": "adolescents",
+            "D": "elderly"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 6,
+        "question": "Desertification is typically a result of ___.",
+        "options": {
+            "A": "drought",
+            "B": "deforestation",
+            "C": "inappropriate agriculture",
+            "D": "all of the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 6,
+        "question": "Which of the following is a key initia tive in India for the problem of hunger?",
+        "options": {
+            "A": "One Nation, One Plate",
+            "B": "One Nation, One Hunger",
+            "C": "One Nation, No Ration Card",
+            "D": "One Nation, One Ration Card"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 6,
+        "question": "In the past, MGNREGA has ___.",
+        "options": {
+            "A": "decreased rural wages",
+            "B": "increased gender wage gaps",
+            "C": "enabled poor access to food",
+            "D": "reduced distress migr ation from rural areas"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 6,
+        "question": "Wheat productivity can suffer if ___.",
+        "options": {
+            "A": "temperature rises",
+            "B": "temperature does not change",
+            "C": "temperature falls",
+            "D": "none of the given"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 6,
+        "question": "Bringing forgotten and neglected foods like yam into cultivation and on to the market  is called ___.",
+        "options": {
+            "A": "diversifying food basket",
+            "B": "restricting food basket",
+            "C": "completing food box",
+            "D": "wasting food basket"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 6,
+        "question": "Home gardening has been proven as a reliable source to supplement food and  nutritional security at the household level.",
+        "options": {
+            "A": "True",
+            "B": "False"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 7,
+        "question": "Which of the following is a type of energy?",
+        "options": {
+            "A": "fossil fuels",
+            "B": "nuclear power",
+            "C": "traditional biomass",
+            "D": "all of the given"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 7,
+        "question": "In IPCC by UN, I stands for ___.",
+        "options": {
+            "A": "Industrial",
+            "B": "Internal",
+            "C": "International",
+            "D": "Intergovernmental"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 7,
+        "question": "The extraction, transport and refineme nt of nuclear fuels results in___.",
+        "options": {
+            "A": "improvement of land from mining",
+            "B": "pollution of air and water",
+            "C": "replenishment of biodiversity",
+            "D": "all of the given"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 7,
+        "question": "The greatest contributor to ai r pollution in China is ___.",
+        "options": {
+            "A": "cooking and heating",
+            "B": "coal burning",
+            "C": "transport",
+            "D": "forest burning"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 7,
+        "question": "In the wake of tsunami and nuclear disaster fo llowing severe earthquak e in 2011, a city in  Japan set a target for ___ by 2022.",
+        "options": {
+            "A": "hundred net energy",
+            "B": "one net energy",
+            "C": "million net energy",
+            "D": "zero net energy"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 7,
+        "question": "The term \u2018energy democracy\u2019 grew out of the ___ movement.",
+        "options": {
+            "A": "hunger justice",
+            "B": "hunger revolt",
+            "C": "climate revolt",
+            "D": "climate justice"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 7,
+        "question": "The Paris Agreement is a legally binding tr eaty on ___ adopted by 19 6 parties at COP 21  in 2015.",
+        "options": {
+            "A": "climate change",
+            "B": "education",
+            "C": "poverty",
+            "D": "none of the given"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 7,
+        "question": "The Government of India launched the NA PCC in 2008 outlining ___ National Missions  on climate change.",
+        "options": {
+            "A": "8",
+            "B": "2",
+            "C": "100",
+            "D": "78"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 7,
+        "question": "Stubble burning usually takes pl ace in the months of ___.",
+        "options": {
+            "A": "October-November",
+            "B": "May-June",
+            "C": "January-February",
+            "D": "July-August"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 7,
+        "question": "Stubble burning is ___.",
+        "options": {
+            "A": "intentional",
+            "B": "natural",
+            "C": "healthy for air quality",
+            "D": "related to burning of paper"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 8,
+        "question": "The Okayama Commitment is from ___.",
+        "options": {
+            "A": "Russia",
+            "B": "South Korea",
+            "C": "North Korea",
+            "D": "Japan"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 8,
+        "question": "Which of the following is a policy supp ort mechanism of Ok ayama Commitment?",
+        "options": {
+            "A": "Taking money",
+            "B": "Content development",
+            "C": "Exploitation of resources",
+            "D": "None of the given"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 8,
+        "question": "Education is related to SDG 9 such that ___.",
+        "options": {
+            "A": "education helps in skills require d to build resilient infrastructure",
+            "B": "education enhances skills to use natural resources more sustainably",
+            "C": "education is critical to lifting people out of poverty",
+            "D": "education helps reduce gender gaps"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 8,
+        "question": "The frame model structures sustainability competencies into ___  goal dimensions.",
+        "options": {
+            "A": "8",
+            "B": "3",
+            "C": "11",
+            "D": "45"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 8,
+        "question": "Sustainability issues must be looked at through a ___ approach.",
+        "options": {
+            "A": "isolated thinking",
+            "B": "independent thinking",
+            "C": "silos thinking",
+            "D": "systems thinking"
+        },
+        "answer": "D"
+    },
+    {
+        "assignment": 8,
+        "question": "Technology and Science can alone solv e all our sustainability problems.",
+        "options": {
+            "A": "True",
+            "B": "False"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 8,
+        "question": "GAP in the context of ESD stands for ___.",
+        "options": {
+            "A": "Global Action Programme",
+            "B": "Great Actvity Plan",
+            "C": "Global Attention Programme",
+            "D": "Great Action Policy"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 8,
+        "question": "___ competency is the ability to unders tand and evaluate multiple futures.",
+        "options": {
+            "A": "anticipatory",
+            "B": "normative",
+            "C": "strategic",
+            "D": "collaborative"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 8,
+        "question": "The ability to question nor ms is ___ competency.",
+        "options": {
+            "A": "critical thinking",
+            "B": "normative",
+            "C": "anticipatory",
+            "D": "self-awareness"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 8,
+        "question": "Action-oriented learning draws on Kolb\u2019s concept of ___.",
+        "options": {
+            "A": "experiential learning",
+            "B": "experimental learning",
+            "C": "rote learning",
+            "D": "direct learning"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 9,
+        "question": "Activities like fish bowl  discussion help ___.",
+        "options": {
+            "A": "passive thinking",
+            "B": "critical and reflexive thinking",
+            "C": "rote-memory",
+            "D": "all of the given"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 9,
+        "question": "Which of the following is not a vision-building exercise?",
+        "options": {
+            "A": "scenario analysis",
+            "B": "classroom teaching",
+            "C": "science fiction thinking",
+            "D": "dystopian storytelling"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 9,
+        "question": "The ability to hold contradictory thought s and feelings is an ___ competency.",
+        "options": {
+            "A": "intellectual",
+            "B": "interpersonal",
+            "C": "intrapersonal",
+            "D": "institutional"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 9,
+        "question": "___intelligences is proposed by Howard Gardner.",
+        "options": {
+            "A": "multiple",
+            "B": "singular",
+            "C": "double",
+            "D": "triple"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 9,
+        "question": "___intelligence refers to usin g one\u2019s body in skilled ways.",
+        "options": {
+            "A": "kinesthetic",
+            "B": "musical",
+            "C": "naturalist",
+            "D": "spatial"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 9,
+        "question": "The idea of big transformation implies that ch anges in individual action are intertwined  with ___.",
+        "options": {
+            "A": "reorganization of self",
+            "B": "reorganization of societal structures",
+            "C": "ignorance of others",
+            "D": "none of the given"
+        },
+        "answer": "B"
+    },
+    {
+        "assignment": 9,
+        "question": "In ___ learning, learners start to question all the things they knew to make room for new  insights and information.",
+        "options": {
+            "A": "transformative",
+            "B": "transactional",
+            "C": "trivial",
+            "D": "trans-disciplinary"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 9,
+        "question": "Which of the following is a key principle of adult education?",
+        "options": {
+            "A": "need to know why",
+            "B": "guilt",
+            "C": "boredom",
+            "D": "none of the given"
+        },
+        "answer": "A"
+    },
+    {
+        "assignment": 9,
+        "question": "___ Sustainable Development is a process through which people influence and share  control over development initiatives, decisi ons and resources that affects them.",
+        "options": {
+            "A": "Internal",
+            "B": "Societal",
+            "C": "Participatory",
+            "D": "Transformational"
+        },
+        "answer": "C"
+    },
+    {
+        "assignment": 9,
+        "question": "___ is the common regula tory body for higher education in India.",
+        "options": {
+            "A": "HECI",
+            "B": "WHO",
+            "C": "AIIMS",
+            "D": "None of the given"
+        },
+        "answer": "A"
+    }
+]
