@@ -43,6 +43,14 @@ const AnalyticsPanel = (() => {
                     <div class="ap-strength-bars" id="ap-strength-bars"></div>
                 </div>
                 <div class="ap-section">
+                    <h4 class="ap-section-title">🎯 Phase & Difficulty</h4>
+                    <div class="ap-phase-info" id="ap-phase-info"></div>
+                </div>
+                <div class="ap-section">
+                    <h4 class="ap-section-title">🔥 Weak Topics</h4>
+                    <div class="ap-weak-topics" id="ap-weak-topics"></div>
+                </div>
+                <div class="ap-section">
                     <h4 class="ap-section-title">Momentum (Last 20)</h4>
                     <div class="ap-momentum" id="ap-momentum"></div>
                 </div>
@@ -139,6 +147,68 @@ const AnalyticsPanel = (() => {
             <div class="ap-beh-chip beh-slow-correct"><span>🐢✓</span> Slow but Correct: ${behaviors['slow-correct']}</div>
             <div class="ap-beh-chip beh-mastery"><span>🏆</span> Mastery: ${behaviors['mastery']}</div>
         `;
+
+        // Phase, Cycle & Difficulty info
+        const phaseEl = document.getElementById('ap-phase-info');
+        const phase = typeof QuestionEngine !== 'undefined' ? QuestionEngine.getPhase() : 1;
+        const diff = typeof QuestionEngine !== 'undefined' ? QuestionEngine.getDifficultyLevel() : 1.0;
+        const cycleInfo = typeof QuestionEngine !== 'undefined' ? QuestionEngine.getCycleInfo() : { cycle: 1, errorFreeCycles: 0 };
+        const mastered = typeof QuestionEngine !== 'undefined' ? QuestionEngine.getMasteredCount() : 0;
+        const poolLen = pool.length;
+        const phaseLabel = phase === 1 ? 'Phase 1 · Shuffle' : 'Phase 2 · Adaptive';
+        const phaseColor = phase === 1 ? '#34d399' : '#a78bfa';
+        const diffLabel = diff >= 1.2 ? 'Hard' : diff <= 0.85 ? 'Easy' : 'Normal';
+        const diffColor = diff >= 1.2 ? '#f87171' : diff <= 0.85 ? '#34d399' : '#94a3b8';
+        phaseEl.innerHTML = `
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+                <div class="ap-stat-card" style="flex:1;min-width:80px">
+                    <span class="ap-stat-label">Phase</span>
+                    <span class="ap-stat-value" style="color:${phaseColor};font-size:0.8rem">${phaseLabel}</span>
+                </div>
+                <div class="ap-stat-card" style="flex:1;min-width:80px">
+                    <span class="ap-stat-label">Cycle</span>
+                    <span class="ap-stat-value" style="color:#22d3ee">${cycleInfo.cycle}</span>
+                </div>
+                <div class="ap-stat-card" style="flex:1;min-width:80px">
+                    <span class="ap-stat-label">Mastered</span>
+                    <span class="ap-stat-value" style="color:#34d399">${mastered}/${poolLen}</span>
+                </div>
+                <div class="ap-stat-card" style="flex:1;min-width:80px">
+                    <span class="ap-stat-label">Difficulty</span>
+                    <span class="ap-stat-value" style="color:${diffColor}">${diff.toFixed(2)}× ${diffLabel}</span>
+                </div>
+            </div>
+            ${cycleInfo.errorFreeCycles > 0 ? `<div style="margin-top:0.5rem;font-size:0.75rem;color:#34d399">🔥 ${cycleInfo.errorFreeCycles} error-free cycle(s) — ${cycleInfo.errorFreeCycles >= 2 ? 'Mastery achieved!' : '2 needed to auto-complete'}</div>` : ''}
+        `;
+
+        // Weak Topics (ranked by weight from WeightEngine)
+        const weakTopicsEl = document.getElementById('ap-weak-topics');
+        const weakTopics = WeightEngine.getWeakTopics(pool);
+        if (weakTopics.length === 0 || weakTopics.every(t => t.attempted === 0)) {
+            weakTopicsEl.innerHTML = '<span class="ap-empty">Answer some questions first</span>';
+        } else {
+            const maxWeight = Math.max(...weakTopics.map(t => t.avgWeight), 1);
+            weakTopicsEl.innerHTML = weakTopics
+                .filter(t => t.attempted > 0)
+                .slice(0, 6)
+                .map(t => {
+                    const pct = Math.min((t.avgWeight / maxWeight) * 100, 100);
+                    const barColor = t.avgWeight > 1.3 ? '#f87171' : t.avgWeight > 0.8 ? '#f59e0b' : '#34d399';
+                    const label = t.avgWeight > 1.3 ? 'Weak' : t.avgWeight > 0.8 ? 'Medium' : 'Strong';
+                    return `
+                        <div class="ap-topic-row">
+                            <div class="ap-topic-info">
+                                <span class="ap-topic-name">${t.topic}</span>
+                                <span class="ap-topic-meta">${t.attempted}/${t.count} seen · ${label}</span>
+                            </div>
+                            <div class="ap-topic-bar-track">
+                                <div class="ap-topic-bar-fill" style="width:${pct}%;background:${barColor}"></div>
+                            </div>
+                            <span class="ap-topic-pct" style="color:${barColor}">${t.avgWeight.toFixed(2)}</span>
+                        </div>
+                    `;
+                }).join('');
+        }
 
         // Topic performance
         const topicPerf = AnalyticsEngine.getTopicPerformance();

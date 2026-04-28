@@ -193,8 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
         score = 0;
         els.liveScore.textContent = '0';
         els.quizDots.innerHTML = ''; 
-        // Show End Session button only in rapid mode
-        els.endSessionBtn.style.display = isRapid ? 'block' : 'none';
+        // Show End Session button in rapid mode and adaptive mode (both run until mastery)
+        els.endSessionBtn.style.display = (isRapid || isAdaptive) ? 'block' : 'none';
         
         showSection('quiz');
         renderNextQuestion();
@@ -226,14 +226,44 @@ document.addEventListener('DOMContentLoaded', () => {
             els.phaseBadge.style.background = 'rgba(245,158,11,0.15)';
             els.phaseBadge.style.color = '#f59e0b';
         } else {
-            els.progressBar.style.width = `${(currentQuestionIndex / prog.total) * 100}%`;
-            els.progressBar.style.background = 'linear-gradient(90deg, var(--accent-1), var(--accent-3))';
             els.progressBar.style.backgroundSize = '100% 100%';
             els.progressBar.style.animation = 'none';
-            els.progressText.textContent = `${currentQuestionIndex} / ${prog.total}`;
-            els.phaseBadge.textContent = QuestionEngine.isAdaptive() ? 'Adaptive' : 'Practice';
-            els.phaseBadge.style.background = QuestionEngine.isAdaptive() ? 'rgba(99,102,241,0.1)' : 'rgba(52,211,153,0.1)';
-            els.phaseBadge.style.color = QuestionEngine.isAdaptive() ? 'var(--accent-2)' : 'var(--success)';
+            
+            const phase = QuestionEngine.getPhase();
+            if (!QuestionEngine.isAdaptive()) {
+                // Non-adaptive: simple practice mode
+                els.progressBar.style.width = `${(currentQuestionIndex / prog.total) * 100}%`;
+                els.progressText.textContent = `${currentQuestionIndex} / ${prog.total}`;
+                els.phaseBadge.textContent = 'Practice';
+                els.phaseBadge.style.background = 'rgba(52,211,153,0.1)';
+                els.phaseBadge.style.color = 'var(--success)';
+                els.progressBar.style.background = 'linear-gradient(90deg, var(--accent-1), var(--accent-3))';
+            } else if (phase === 1) {
+                // Phase 1: Pure shuffle — Cycle 1 showing each question once
+                const poolSize = QuestionEngine.getPool().length;
+                els.progressBar.style.width = `${(currentQuestionIndex / poolSize) * 100}%`;
+                els.progressText.textContent = `${currentQuestionIndex} / ${poolSize} · Cycle 1`;
+                els.phaseBadge.textContent = 'Phase 1 · Shuffle';
+                els.phaseBadge.style.background = 'rgba(52,211,153,0.12)';
+                els.phaseBadge.style.color = '#34d399';
+                els.progressBar.style.background = 'linear-gradient(90deg, #34d399, #22d3ee)';
+            } else {
+                // Phase 2: Adaptive weighted — show cycle + mastery progress
+                const cycleInfo = QuestionEngine.getCycleInfo();
+                const mastered = QuestionEngine.getMasteredCount();
+                const poolSize = QuestionEngine.getPool().length;
+                const masteryPct = poolSize > 0 ? (mastered / poolSize) * 100 : 0;
+                
+                els.progressBar.style.width = `${masteryPct}%`;
+                els.progressText.textContent = `#${currentQuestionIndex} · ✅ ${mastered}/${poolSize} mastered · Cycle ${cycleInfo.cycle}`;
+                
+                const diff = QuestionEngine.getDifficultyLevel();
+                const diffLabel = diff >= 1.2 ? ' · Hard' : diff <= 0.85 ? ' · Easy' : '';
+                els.phaseBadge.textContent = `Phase 2 · Adaptive${diffLabel}`;
+                els.phaseBadge.style.background = 'rgba(99,102,241,0.12)';
+                els.phaseBadge.style.color = 'var(--accent-2)';
+                els.progressBar.style.background = 'linear-gradient(90deg, var(--accent-1), var(--accent-2))';
+            }
         }
 
         // Setup Question Card

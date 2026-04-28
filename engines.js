@@ -18,7 +18,12 @@ const WeightEngine = (() => {
         streakBoostThreshold: 3,
         streakBoostMultiplier: 1.5,
         memoryDecayHours: 2,
-        memoryDecayMaxBoost: 2.0,
+        memoryDecayMaxBoost: 3.0,
+        // Topic intelligence
+        topicWeakBoost: 1.4,        // multiplier for questions in weak topics
+        // Speed pressure
+        speedStalenessThreshold: 3, // attempts without speed improvement → resurface
+        speedPressureBoost: 1.25,
     };
 
     let questionData = {}; // keyed by question id
@@ -111,11 +116,15 @@ const WeightEngine = (() => {
         // Hybrid
         let weight = (CONFIG.accuracyRatio * accW) + (CONFIG.timeRatio * timeW);
 
-        // Streak intelligence
+        // Progressive streak scaling (graduated, not binary)
         if (r.streak >= CONFIG.streakBoostThreshold) {
-            weight *= 0.7; // correct streak → reduce
+            // streak 3→0.7, 4→0.6, 5+→0.5 (correct streak reduces priority)
+            const scale = Math.max(0.5, 0.7 - (r.streak - CONFIG.streakBoostThreshold) * 0.1);
+            weight *= scale;
         } else if (r.streak <= -CONFIG.streakBoostThreshold) {
-            weight *= CONFIG.streakBoostMultiplier; // wrong streak → boost
+            // streak -3→1.5, -4→1.75, -5+→2.0 (wrong streak aggressively boosts)
+            const scale = Math.min(2.0, CONFIG.streakBoostMultiplier + (Math.abs(r.streak) - CONFIG.streakBoostThreshold) * 0.25);
+            weight *= scale;
         }
 
         // Confidence adjustment
@@ -125,22 +134,46 @@ const WeightEngine = (() => {
             weight *= 0.8;
         }
 
-        // Memory decay (spaced repetition)
+        // Memory decay (spaced repetition) — steeper curve after 4h
         if (r.lastSeen) {
             const hoursSince = (Date.now() - r.lastSeen) / (1000 * 60 * 60);
             if (hoursSince > CONFIG.memoryDecayHours) {
-                const decayBoost = Math.min(1 + (hoursSince - CONFIG.memoryDecayHours) * 0.1, CONFIG.memoryDecayMaxBoost);
+                const baseDecay = (hoursSince - CONFIG.memoryDecayHours) * 0.1;
+                // After 4 hours, decay accelerates (quadratic ramp)
+                const steepDecay = hoursSince > 4 ? Math.pow((hoursSince - 4) * 0.15, 1.3) : 0;
+                const decayBoost = Math.min(1 + baseDecay + steepDecay, CONFIG.memoryDecayMaxBoost);
                 weight *= decayBoost;
             }
         }
 
-        // Momentum: if degrading, boost
+        // Sliding window momentum: compare last 5 vs last 20 for granular trend
         if (r.momentum.length >= 5) {
             const recent5 = r.momentum.slice(-5);
             const recentAcc = recent5.filter(Boolean).length / 5;
-            const overall = r.correct_count / r.attempts;
-            if (recentAcc < overall - 0.1) weight *= 1.2; // degrading
-            else if (recentAcc > overall + 0.1) weight *= 0.9; // improving
+            if (r.momentum.length >= 10) {
+                // Compare short-term (5) vs mid-term (20) trend
+                const window20 = r.momentum.slice(-20);
+                const midAcc = window20.filter(Boolean).length / window20.length;
+                if (recentAcc < midAcc - 0.15) weight *= 1.3;       // degrading fast
+                else if (recentAcc < midAcc - 0.05) weight *= 1.15; // degrading
+                else if (recentAcc > midAcc + 0.15) weight *= 0.8;  // improving fast
+                else if (recentAcc > midAcc + 0.05) weight *= 0.9;  // improving
+            } else {
+                const overall = r.correct_count / r.attempts;
+                if (recentAcc < overall - 0.1) weight *= 1.2;
+                else if (recentAcc > overall + 0.1) weight *= 0.9;
+            }
+        }
+
+        // Speed pressure: if correct but slow and not improving speed, boost
+        if (r.attempts >= CONFIG.speedStalenessThreshold && r.times.length >= 3) {
+            const last3 = r.times.slice(-3);
+            const avgLast3 = last3.reduce((a, b) => a + b, 0) / 3;
+            const acc = r.correct_count / r.attempts;
+            // Correct but consistently slow → speed pressure
+            if (acc >= 0.6 && avgLast3 > it * 1.2) {
+                weight *= CONFIG.speedPressureBoost;
+            }
         }
 
         // Floor: strong questions never zero
@@ -174,6 +207,32 @@ const WeightEngine = (() => {
 
     function getAllData() { return questionData; }
 
+    // Topic-level intelligence: aggregate weakness across all questions in a topic
+    function getTopicWeight(topic, pool, idealTime) {
+        const topicQs = pool.filter(q => (q.topic || `Week ${q.assignment}`) === topic);
+        if (topicQs.length === 0) return 1.0;
+        const weights = topicQs.map(q => computeWeight(q.id, idealTime));
+        return weights.reduce((a, b) => a + b, 0) / weights.length;
+    }
+
+    // Get all topics ranked by weakness (highest weight = weakest)
+    function getWeakTopics(pool) {
+        const idealTime = getIdealTime(pool);
+        const topicMap = {};
+        pool.forEach(q => {
+            const topic = q.topic || `Week ${q.assignment}`;
+            if (!topicMap[topic]) topicMap[topic] = [];
+            topicMap[topic].push(q);
+        });
+        const ranked = Object.keys(topicMap).map(topic => {
+            const qs = topicMap[topic];
+            const avgWeight = qs.map(q => computeWeight(q.id, idealTime)).reduce((a, b) => a + b, 0) / qs.length;
+            const attempted = qs.filter(q => getRecord(q.id).attempts > 0).length;
+            return { topic, avgWeight, count: qs.length, attempted };
+        });
+        return ranked.sort((a, b) => b.avgWeight - a.avgWeight);
+    }
+
     function reset() {
         questionData = {};
         localStorage.removeItem(STORAGE_KEY);
@@ -184,7 +243,7 @@ const WeightEngine = (() => {
     return {
         CONFIG, load, save, getRecord, recordAnswer,
         getIdealTime, computeWeight, getStrength, getBehavior,
-        getAllData, reset,
+        getAllData, getTopicWeight, getWeakTopics, reset,
     };
 })();
 
@@ -258,17 +317,26 @@ const TimerEngine = (() => {
 
 /* ── QuestionEngine ───────────────────────────────────────── */
 const QuestionEngine = (() => {
-    let pool = [];              // strictly limited question pool for the session
-    let totalQuestions = 0;     
+    let pool = [];              // full question pool for the session
+    let phase1Queue = [];       // Phase 1: shuffled queue (each question exactly once)
+    let totalQuestions = 0;     // max cap (safety limit)
     let servedCount = 0;        
     let recentBuffer = [];      
     const BUFFER_SIZE = 8;
     let adaptiveMode = true;
     let shouldShuffleOpts = true;
     let rapidMode = false;      
-    let questionStreaks = {};   // qId -> consecutive correct
-    const RAPID_STREAK_LIMIT = 3; 
+    let questionStreaks = {};   // qId -> consecutive correct (used in ALL modes)
+    const RAPID_STREAK_LIMIT = 3;   // rapid mode: 3 consecutive correct
+    const ADAPTIVE_MASTERY = 2;     // adaptive mode: 2 consecutive correct = mastered
     let ended = false;
+    let currentPhase = 1;       // 1 = pure shuffle (cycle 1), 2 = adaptive weighted (cycle 2+)
+    let difficultyLevel = 1.0;  // dynamic difficulty evolution
+    let sessionResults = [];    // track recent session results for difficulty calc
+    let currentCycle = 1;       // which cycle we're on (1 = phase 1, 2+ = adaptive)
+    let cycleServed = 0;        // questions served in current cycle
+    let errorFreeCycles = 0;    // consecutive cycles with zero errors
+    let cycleHadError = false;  // did current cycle have any errors?
 
     function init(questions, isAdaptive, numQs, shouldShuffle, isRapid) {
         let tempPool = questions.slice();
@@ -286,16 +354,30 @@ const QuestionEngine = (() => {
         shouldShuffleOpts = shouldShuffle !== false;
         rapidMode = isRapid === true;
         
-        // If rapid mode, it's infinity.
-        // Otherwise, it runs for exactly numQs iterations (or pool.length if numQs isn't set)
-        // This allows drilling e.g. 50 available questions for 200 iterations adaptively.
+        // In adaptive mode: the input is a max cap, but quiz can end early via mastery
+        // In rapid mode: infinity
+        // In non-adaptive: exact count
         totalQuestions = rapidMode ? Infinity : (numQs && numQs > 0 ? numQs : pool.length);
+        
+        // Phase 1 queue: all pool questions in shuffled order (shown exactly once)
+        if (adaptiveMode && !rapidMode) {
+            phase1Queue = pool.slice(); // already shuffled
+        } else {
+            phase1Queue = [];
+        }
+        currentPhase = (adaptiveMode && !rapidMode && phase1Queue.length > 0) ? 1 : 2;
         
         servedCount = 0;
         recentBuffer = [];
         questionStreaks = {};
         pool.forEach(q => questionStreaks[q.id] = 0);
         ended = false;
+        difficultyLevel = 1.0;
+        sessionResults = [];
+        currentCycle = 1;
+        cycleServed = 0;
+        errorFreeCycles = 0;
+        cycleHadError = false;
     }
 
     function shuffle(arr) {
@@ -309,51 +391,125 @@ const QuestionEngine = (() => {
     function isAdaptive() { return adaptiveMode; }
     function isRapidMode() { return rapidMode; }
     function getRapidStreakLimit() { return RAPID_STREAK_LIMIT; }
+    function getDifficultyLevel() { return difficultyLevel; }
+    function getCycleInfo() { return { cycle: currentCycle, errorFreeCycles, cycleServed }; }
     
-    // Returns number of fully mastered questions in rapid mode
+    // Returns number of fully mastered questions
     function getMasteredCount() {
-        return Object.values(questionStreaks).filter(s => s >= RAPID_STREAK_LIMIT).length;
+        const limit = rapidMode ? RAPID_STREAK_LIMIT : ADAPTIVE_MASTERY;
+        return Object.values(questionStreaks).filter(s => s >= limit).length;
     }
 
-    // Called after each answer in rapid mode to track streak
+    // Called after each answer to track streaks and mastery
     function recordRapidResult(qId, isCorrect) {
-        if (!rapidMode) return false;
+        // Track session results for difficulty evolution (all modes)
+        sessionResults.push(isCorrect);
+        if (sessionResults.length > 20) sessionResults.shift();
+        updateDifficulty();
         
+        // Track per-question streaks in ALL modes (not just rapid)
         if (isCorrect) {
             questionStreaks[qId] = (questionStreaks[qId] || 0) + 1;
         } else {
             questionStreaks[qId] = 0;
+            cycleHadError = true;
         }
         
-        // Check if ALL questions in the pool are mastered
-        const allMastered = pool.every(q => questionStreaks[q.id] >= RAPID_STREAK_LIMIT);
+        // Track cycle progress (adaptive mode cycle tracking)
+        if (adaptiveMode && !rapidMode && currentPhase >= 2) {
+            cycleServed++;
+            // A "cycle" = going through pool.length questions in Phase 2
+            if (cycleServed >= pool.length) {
+                // Cycle complete
+                if (!cycleHadError) {
+                    errorFreeCycles++;
+                } else {
+                    errorFreeCycles = 0;
+                }
+                // Reset for next cycle
+                currentCycle++;
+                cycleServed = 0;
+                cycleHadError = false;
+                
+                // Auto-end: 2 consecutive error-free cycles = mastery achieved
+                if (errorFreeCycles >= 2) {
+                    ended = true;
+                    return true; // signal to show results
+                }
+            }
+        }
+        
+        // Also check individual mastery: if ALL questions mastered, auto-end
+        const limit = rapidMode ? RAPID_STREAK_LIMIT : ADAPTIVE_MASTERY;
+        const allMastered = pool.every(q => questionStreaks[q.id] >= limit);
         if (allMastered) {
             ended = true;
+            return true;
         }
-        return allMastered;
+        
+        // For non-adaptive mode, no auto-stop
+        if (!adaptiveMode && !rapidMode) return false;
+        
+        return false;
+    }
+
+    // Difficulty Evolution: adjusts based on rolling session performance
+    function updateDifficulty() {
+        if (sessionResults.length < 5) return;
+        const recent = sessionResults.slice(-20);
+        const acc = recent.filter(Boolean).length / recent.length;
+        if (acc > 0.85) difficultyLevel = Math.min(difficultyLevel + 0.05, 1.5);
+        else if (acc > 0.7) difficultyLevel = Math.min(difficultyLevel + 0.02, 1.3);
+        else if (acc < 0.4) difficultyLevel = Math.max(difficultyLevel - 0.05, 0.7);
+        else if (acc < 0.55) difficultyLevel = Math.max(difficultyLevel - 0.02, 0.8);
     }
 
     function getNext() {
         if (ended) return null;
 
+        // Max cap — safety limit so it doesn't run literally forever
         if (!rapidMode && servedCount >= totalQuestions) {
             return null;
         }
 
+        // In adaptive mode Phase 2: filter out fully mastered questions
         let candidates = pool;
         if (rapidMode) {
-            // Filter out mastered questions
             candidates = pool.filter(q => questionStreaks[q.id] < RAPID_STREAK_LIMIT);
             if (candidates.length === 0) {
+                ended = true;
+                return null;
+            }
+        } else if (adaptiveMode && currentPhase >= 2) {
+            // Filter out mastered questions in adaptive Phase 2
+            candidates = pool.filter(q => questionStreaks[q.id] < ADAPTIVE_MASTERY);
+            if (candidates.length === 0) {
+                // All mastered — auto-end
                 ended = true;
                 return null;
             }
         }
 
         let question;
-        if (adaptiveMode || rapidMode) {
+        
+        // ── Phase 1: Pure Shuffle (Cycle 1 — show each question once) ──
+        if (currentPhase === 1 && phase1Queue.length > 0) {
+            question = phase1Queue.shift();
+            // When Phase 1 queue is exhausted, transition to Phase 2
+            if (phase1Queue.length === 0) {
+                currentPhase = 2;
+                currentCycle = 2;
+                cycleServed = 0;
+                cycleHadError = false;
+            }
+        }
+        // ── Phase 2: Adaptive Weighted Selection (Cycle 2+) ──
+        else if (adaptiveMode || rapidMode) {
+            currentPhase = 2;
             question = selectAdaptive(candidates);
-        } else {
+        }
+        // ── Non-adaptive: sequential ──
+        else {
             question = pool[servedCount] || null;
         }
 
@@ -371,7 +527,26 @@ const QuestionEngine = (() => {
         let candidates = candidatesList.filter(q => !recentBuffer.includes(q.id));
         if (candidates.length === 0) candidates = candidatesList.slice(); // fallback
 
-        const weights = candidates.map(q => WeightEngine.computeWeight(q.id, idealTime));
+        // Compute weights with topic intelligence boost
+        const weights = candidates.map(q => {
+            let w = WeightEngine.computeWeight(q.id, idealTime);
+            
+            // Topic-level intelligence: boost questions from weak topics
+            const topic = q.topic || `Week ${q.assignment}`;
+            const topicWeight = WeightEngine.getTopicWeight(topic, pool, idealTime);
+            if (topicWeight > 1.3) {
+                w *= WeightEngine.CONFIG.topicWeakBoost;
+            }
+            
+            // Difficulty evolution: at higher difficulty, strong questions get a floor boost
+            const strength = WeightEngine.getStrength(q.id, idealTime);
+            if (difficultyLevel > 1.1 && strength === 'strong') {
+                w = Math.max(w, 0.3 * difficultyLevel);
+            }
+            
+            return w;
+        });
+        
         const totalWeight = weights.reduce((a, b) => a + b, 0);
 
         let rand = Math.random() * totalWeight;
@@ -389,15 +564,24 @@ const QuestionEngine = (() => {
         if (recentBuffer.length > BUFFER_SIZE) recentBuffer.shift();
     }
 
-    function getPhase() { return 1; }
-    function getProgress() { return { index: servedCount, total: rapidMode ? servedCount : totalQuestions }; }
-    function isPhase1Complete() { return !rapidMode && servedCount >= totalQuestions; }
+    function getPhase() { return currentPhase; }
+    function getProgress() {
+        if (rapidMode) return { index: servedCount, total: servedCount };
+        if (adaptiveMode && currentPhase >= 2) {
+            // In adaptive Phase 2: show mastery progress instead of fixed count
+            const mastered = getMasteredCount();
+            return { index: servedCount, total: totalQuestions, mastered, poolSize: pool.length };
+        }
+        return { index: servedCount, total: totalQuestions };
+    }
+    function isPhase1Complete() { return currentPhase >= 2; }
     function getPool() { return pool; }
     function endSession() { ended = true; }
 
     return {
         init, getNext, getPhase, getProgress, isPhase1Complete, isAdaptive, isRapidMode,
-        getPool, endSession, shuffle, recordRapidResult, getMasteredCount, getRapidStreakLimit
+        getPool, endSession, shuffle, recordRapidResult, getMasteredCount, getRapidStreakLimit,
+        getDifficultyLevel, getCycleInfo
     };
 })();
 
