@@ -360,12 +360,13 @@ const QuestionEngine = (() => {
         totalQuestions = rapidMode ? Infinity : (numQs && numQs > 0 ? numQs : pool.length);
         
         // Phase 1 queue: all pool questions in shuffled order (shown exactly once)
-        if (adaptiveMode && !rapidMode) {
+        // Both adaptive and rapid mode get Phase 1 (see every question first)
+        if (adaptiveMode || rapidMode) {
             phase1Queue = pool.slice(); // already shuffled
         } else {
             phase1Queue = [];
         }
-        currentPhase = (adaptiveMode && !rapidMode && phase1Queue.length > 0) ? 1 : 2;
+        currentPhase = ((adaptiveMode || rapidMode) && phase1Queue.length > 0) ? 1 : 2;
         
         servedCount = 0;
         recentBuffer = [];
@@ -415,11 +416,15 @@ const QuestionEngine = (() => {
             cycleHadError = true;
         }
         
-        // Track cycle progress (adaptive mode cycle tracking)
-        if (adaptiveMode && !rapidMode && currentPhase >= 2) {
+        // Track cycle progress (both adaptive and rapid modes)
+        if ((adaptiveMode || rapidMode) && currentPhase >= 2) {
             cycleServed++;
             // A "cycle" = going through pool.length questions in Phase 2
-            if (cycleServed >= pool.length) {
+            // For rapid: use unmastered count as cycle length (shrinks as you master)
+            const cycleLength = rapidMode
+                ? pool.filter(q => questionStreaks[q.id] < RAPID_STREAK_LIMIT).length || pool.length
+                : pool.length;
+            if (cycleServed >= cycleLength) {
                 // Cycle complete
                 if (!cycleHadError) {
                     errorFreeCycles++;
@@ -434,7 +439,7 @@ const QuestionEngine = (() => {
                 // Auto-end: 2 consecutive error-free cycles = mastery achieved
                 if (errorFreeCycles >= 2) {
                     ended = true;
-                    return true; // signal to show results
+                    return true;
                 }
             }
         }
@@ -474,7 +479,7 @@ const QuestionEngine = (() => {
 
         // In adaptive mode Phase 2: filter out fully mastered questions
         let candidates = pool;
-        if (rapidMode) {
+        if (rapidMode && currentPhase >= 2) {
             candidates = pool.filter(q => questionStreaks[q.id] < RAPID_STREAK_LIMIT);
             if (candidates.length === 0) {
                 ended = true;

@@ -214,17 +214,33 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Progress bar & text
         if (isRapid) {
-            // Rapid mode: pulsing infinite bar, show question count + streak
-            els.progressBar.style.width = '100%';
-            els.progressBar.style.background = 'linear-gradient(90deg, #f59e0b, #ef4444, #f59e0b)';
-            els.progressBar.style.backgroundSize = '200% 100%';
-            els.progressBar.style.animation = 'rapidPulse 2s linear infinite';
+            const phase = QuestionEngine.getPhase();
             const mastered = QuestionEngine.getMasteredCount();
-            const total = prog.total;
-            els.progressText.textContent = `#${currentQuestionIndex} · 🔥 Mastered: ${mastered}/${total}`;
-            els.phaseBadge.textContent = '♾️ Rapid';
-            els.phaseBadge.style.background = 'rgba(245,158,11,0.15)';
-            els.phaseBadge.style.color = '#f59e0b';
+            const poolSize = QuestionEngine.getPool().length;
+            
+            if (phase === 1) {
+                // Rapid Phase 1: show all questions once first (green bar)
+                els.progressBar.style.width = `${(currentQuestionIndex / poolSize) * 100}%`;
+                els.progressBar.style.background = 'linear-gradient(90deg, #f59e0b, #34d399)';
+                els.progressBar.style.backgroundSize = '100% 100%';
+                els.progressBar.style.animation = 'none';
+                els.progressText.textContent = `${currentQuestionIndex} / ${poolSize} · Cycle 1`;
+                els.phaseBadge.textContent = '⚡ Phase 1 · Rapid Shuffle';
+                els.phaseBadge.style.background = 'rgba(52,211,153,0.15)';
+                els.phaseBadge.style.color = '#34d399';
+            } else {
+                // Rapid Phase 2: adaptive pulsing bar with mastery + cycle info
+                const cycleInfo = QuestionEngine.getCycleInfo();
+                const masteryPct = poolSize > 0 ? (mastered / poolSize) * 100 : 0;
+                els.progressBar.style.width = `${masteryPct}%`;
+                els.progressBar.style.background = 'linear-gradient(90deg, #f59e0b, #ef4444, #f59e0b)';
+                els.progressBar.style.backgroundSize = '200% 100%';
+                els.progressBar.style.animation = 'rapidPulse 2s linear infinite';
+                els.progressText.textContent = `#${currentQuestionIndex} · 🔥 ${mastered}/${poolSize} mastered · Cycle ${cycleInfo.cycle}`;
+                els.phaseBadge.textContent = '♾️ Phase 2 · Rapid Adaptive';
+                els.phaseBadge.style.background = 'rgba(245,158,11,0.15)';
+                els.phaseBadge.style.color = '#f59e0b';
+            }
         } else {
             els.progressBar.style.backgroundSize = '100% 100%';
             els.progressBar.style.animation = 'none';
