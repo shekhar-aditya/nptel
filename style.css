@@ -175,6 +175,44 @@ body {
 .cta-btn:hover::before { opacity:1; }
 .cta-btn:active { transform:translateY(-1px); }
 
+/* Creator Cards */
+.creators-container {
+    position: fixed;
+    top: calc(var(--nav-h) + 1.5rem);
+    right: 2rem;
+    display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;
+    z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+    transform-origin: top right;
+}
+body.in-quiz .creators-container {
+    transform: scale(0.65);
+    opacity: 0.8;
+}
+.creator-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); font-weight: 700; margin-right: 0.25rem; }
+.creator-cards { display: flex; flex-direction: row; gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
+.creator-card {
+    display: inline-flex; align-items: center; gap: 0.85rem;
+    padding: 0.75rem 1.1rem;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s, background 0.3s, border-color 0.3s;
+    text-decoration: none; cursor: pointer;
+}
+.creator-card:hover {
+    transform: translateY(-3px);
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+.creator-icon { font-size: 1.6rem; }
+.creator-info { display: flex; flex-direction: column; gap: 0.15rem; }
+.creator-names { font-size: 0.9rem; font-weight: 600; color: var(--accent-2); }
+.creator-desc { font-size: 0.7rem; color: var(--text-2); font-style: italic; }
+.creator-link-icon { color: var(--text-3); margin-left: 0.25rem; transition: color 0.3s, transform 0.3s; }
+.creator-card:hover .creator-link-icon { color: var(--accent-1); transform: translate(2px, -2px); }
+
 /* Hero Visual — Floating Cards */
 .hero-visual { position:relative; width:340px; height:340px; flex-shrink:0; }
 .floating-card {
@@ -273,6 +311,27 @@ body {
     font-size:0.85rem; color:var(--text-3);
 }
 .selected-info span { font-weight:700; color:var(--accent-2); font-family:var(--mono); }
+
+/* Mode Guide */
+.mode-guide {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.mode-guide h4 {
+    font-size: 0.85rem; font-weight: 700; color: var(--text-2);
+    margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.mode-guide-item {
+    margin-bottom: 0.75rem;
+    background: rgba(30, 41, 59, 0.4);
+    padding: 1rem; border-radius: var(--radius-sm);
+    border-left: 3px solid var(--accent-1);
+}
+.mode-guide-item.mg-rapid { border-left-color: #f59e0b; }
+.mode-guide-item.mg-tip { border-left-color: #10b981; }
+.mg-title { display: block; font-weight: 600; font-size: 0.85rem; color: var(--text-1); margin-bottom: 0.3rem; }
+.mg-desc { font-size: 0.8rem; color: var(--text-3); line-height: 1.5; display: block; }
 
 /* Number Input */
 .option-block { margin-bottom:1.5rem; }

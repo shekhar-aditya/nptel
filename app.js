@@ -143,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showSection(name) {
         Object.values(sections).forEach(s => s.classList.remove('active-section'));
         sections[name].classList.add('active-section');
+        document.body.classList.toggle('in-quiz', name === 'quiz');
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (name !== 'quiz') {
             TimerEngine.stop();
