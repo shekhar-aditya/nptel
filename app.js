@@ -437,6 +437,16 @@ document.addEventListener('DOMContentLoaded', () => {
         finalizeAnswerAndNext(qData, currentIsCorrect, timeTaken, null);
     });
 
+    // Enter key → advance to next question
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter') return;
+        // Only work when quiz section is visible and Next button is enabled
+        if (document.getElementById('quiz-section').style.display === 'none') return;
+        if (els.nextBtn.disabled) return;
+        e.preventDefault();
+        els.nextBtn.click();
+    });
+
     els.endSessionBtn.addEventListener('click', () => {
         if (confirm("End session and view results?")) {
             QuestionEngine.endSession();
