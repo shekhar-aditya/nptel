@@ -186,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let numQs = parseInt(els.numQuestions.value) || 10;
 
         QuestionEngine.init(pool, isAdaptive, numQs, els.jumbleQuestions.checked, isRapid);
+        QuestionEngine.setConfusionDrill(document.getElementById('confusion-drill').checked);
         AnalyticsEngine.resetSession();
         
         currentQuestionIndex = 0;
@@ -280,6 +281,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 els.phaseBadge.style.color = 'var(--accent-2)';
                 els.progressBar.style.background = 'linear-gradient(90deg, var(--accent-1), var(--accent-2))';
             }
+        }
+
+        // Confusion drill badge override
+        if (QuestionEngine.isInConfusionDrill()) {
+            els.phaseBadge.textContent = '🔗 Confusion Drill';
+            els.phaseBadge.style.background = 'rgba(239,68,68,0.15)';
+            els.phaseBadge.style.color = '#f87171';
         }
 
         // Setup Question Card

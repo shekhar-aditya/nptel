@@ -1,9 +1,10 @@
 /* ============================================================
    ADAPTIVE LEARNING ENGINES
-   - WeightEngine:    per-question accuracy/time/hybrid scoring
-   - TimerEngine:     per-question timing with pause/resume
-   - QuestionEngine:  Phase 1 shuffle + Phase 2 adaptive loop
-   - AnalyticsEngine: real-time stats, topic perf, behavior
+   - WeightEngine:      per-question accuracy/time/hybrid scoring
+   - TimerEngine:       per-question timing with pause/resume
+   - QuestionEngine:    Phase 1 shuffle + Phase 2 adaptive loop
+   - SimilarityEngine:  finds similar/confusing questions
+   - AnalyticsEngine:   real-time stats, topic perf, behavior
    ============================================================ */
 
 const STORAGE_KEY = 'esd_learning_data';
@@ -337,6 +338,9 @@ const QuestionEngine = (() => {
     let cycleServed = 0;        // questions served in current cycle
     let errorFreeCycles = 0;    // consecutive cycles with zero errors
     let cycleHadError = false;  // did current cycle have any errors?
+    let confusionDrillEnabled = false;  // confusion drill toggle
+    let confusionDrillQueue = [];       // queued similar questions for rapid drilling
+    let inConfusionDrill = false;       // currently in a confusion drill burst
 
     function init(questions, isAdaptive, numQs, shouldShuffle, isRapid) {
         let tempPool = questions.slice();
@@ -379,6 +383,8 @@ const QuestionEngine = (() => {
         cycleServed = 0;
         errorFreeCycles = 0;
         cycleHadError = false;
+        confusionDrillQueue = [];
+        inConfusionDrill = false;
     }
 
     function shuffle(arr) {
@@ -394,6 +400,8 @@ const QuestionEngine = (() => {
     function getRapidStreakLimit() { return RAPID_STREAK_LIMIT; }
     function getDifficultyLevel() { return difficultyLevel; }
     function getCycleInfo() { return { cycle: currentCycle, errorFreeCycles, cycleServed }; }
+    function isInConfusionDrill() { return inConfusionDrill; }
+    function setConfusionDrill(enabled) { confusionDrillEnabled = enabled; }
     
     // Returns number of fully mastered questions
     function getMasteredCount() {
@@ -411,9 +419,20 @@ const QuestionEngine = (() => {
         // Track per-question streaks in ALL modes (not just rapid)
         if (isCorrect) {
             questionStreaks[qId] = (questionStreaks[qId] || 0) + 1;
+            // If we were in a confusion drill and got it right, clear the drill
+            if (inConfusionDrill && confusionDrillQueue.length === 0) {
+                inConfusionDrill = false;
+            }
         } else {
             questionStreaks[qId] = 0;
             cycleHadError = true;
+            // Trigger confusion drill: queue similar questions for rapid review
+            if (confusionDrillEnabled) {
+                const wrongQ = pool.find(q => q.id === qId);
+                if (wrongQ) {
+                    triggerConfusionDrill(wrongQ);
+                }
+            }
         }
         
         // Track cycle progress (both adaptive and rapid modes)
@@ -469,6 +488,20 @@ const QuestionEngine = (() => {
         else if (acc < 0.55) difficultyLevel = Math.max(difficultyLevel - 0.02, 0.8);
     }
 
+    // Confusion Drill: queue similar questions for rapid drilling after a wrong answer
+    function triggerConfusionDrill(wrongQ) {
+        const similar = SimilarityEngine.findSimilar(wrongQ, pool, 0.3, 5);
+        if (similar.length === 0) return;
+        // Add the wrong question itself first (retry), then similar ones
+        // Avoid duplicates in the queue
+        const existing = new Set(confusionDrillQueue.map(q => q.id));
+        const toAdd = [wrongQ, ...similar].filter(q => !existing.has(q.id));
+        confusionDrillQueue.push(...toAdd);
+        // Shuffle the drill queue for variety
+        shuffle(confusionDrillQueue);
+        inConfusionDrill = true;
+    }
+
     function getNext() {
         if (ended) return null;
 
@@ -496,6 +529,21 @@ const QuestionEngine = (() => {
         }
 
         let question;
+
+        // ── Confusion Drill: serve queued similar questions first ──
+        if (inConfusionDrill && confusionDrillQueue.length > 0) {
+            question = confusionDrillQueue.shift();
+            if (confusionDrillQueue.length === 0) {
+                inConfusionDrill = false;
+            }
+            servedCount++;
+            addToBuffer(question.id);
+            return question;
+        }
+        // Reset confusion drill flag if queue is empty
+        if (inConfusionDrill && confusionDrillQueue.length === 0) {
+            inConfusionDrill = false;
+        }
         
         // ── Phase 1: Pure Shuffle (Cycle 1 — show each question once) ──
         if (currentPhase === 1 && phase1Queue.length > 0) {
@@ -586,8 +634,89 @@ const QuestionEngine = (() => {
     return {
         init, getNext, getPhase, getProgress, isPhase1Complete, isAdaptive, isRapidMode,
         getPool, endSession, shuffle, recordRapidResult, getMasteredCount, getRapidStreakLimit,
-        getDifficultyLevel, getCycleInfo
+        getDifficultyLevel, getCycleInfo, isInConfusionDrill, setConfusionDrill
     };
+})();
+
+
+/* ── SimilarityEngine ────────────────────────────────────── */
+const SimilarityEngine = (() => {
+    // Stop words to ignore in similarity comparison
+    const STOP_WORDS = new Set([
+        'the','a','an','is','are','was','were','be','been','being',
+        'in','on','at','to','for','of','with','by','from','as',
+        'and','or','but','not','no','nor','so','yet','if','then',
+        'that','this','which','who','whom','whose','what','how',
+        'all','each','every','both','few','more','most','other',
+        'some','such','only','own','same','than','too','very',
+        'can','will','shall','may','might','must','should','would',
+        'do','does','did','has','have','had','it','its','they',
+    ]);
+
+    // Extract meaningful keywords from text
+    function extractKeywords(text) {
+        return text.toLowerCase()
+            .replace(/[^a-z0-9\s]/g, ' ')
+            .split(/\s+/)
+            .filter(w => w.length > 2 && !STOP_WORDS.has(w));
+    }
+
+    // Extract option values as keywords
+    function extractOptionKeywords(options) {
+        return Object.values(options)
+            .join(' ')
+            .toLowerCase()
+            .replace(/[^a-z0-9\s]/g, ' ')
+            .split(/\s+/)
+            .filter(w => w.length > 2 && !STOP_WORDS.has(w));
+    }
+
+    // Compute similarity score between two questions (0–1)
+    function computeSimilarity(q1, q2) {
+        if (q1.id === q2.id) return 0; // same question = not similar
+
+        let score = 0;
+
+        // 1. Same topic = strong base similarity
+        const t1 = q1.topic || `Week ${q1.assignment}`;
+        const t2 = q2.topic || `Week ${q2.assignment}`;
+        if (t1 === t2) score += 0.3;
+
+        // 2. Same assignment
+        if (q1.assignment === q2.assignment) score += 0.1;
+
+        // 3. Question text keyword overlap (Jaccard similarity)
+        const kw1 = new Set(extractKeywords(q1.question));
+        const kw2 = new Set(extractKeywords(q2.question));
+        if (kw1.size > 0 && kw2.size > 0) {
+            const intersection = [...kw1].filter(w => kw2.has(w)).length;
+            const union = new Set([...kw1, ...kw2]).size;
+            score += (intersection / union) * 0.35;
+        }
+
+        // 4. Answer option overlap (shared answer text = confusing pair)
+        const opt1 = new Set(extractOptionKeywords(q1.options));
+        const opt2 = new Set(extractOptionKeywords(q2.options));
+        if (opt1.size > 0 && opt2.size > 0) {
+            const optIntersection = [...opt1].filter(w => opt2.has(w)).length;
+            const optUnion = new Set([...opt1, ...opt2]).size;
+            score += (optIntersection / optUnion) * 0.25;
+        }
+
+        return Math.min(score, 1.0);
+    }
+
+    // Find top N similar questions from a pool
+    function findSimilar(targetQ, pool, threshold = 0.35, maxResults = 5) {
+        const scored = pool
+            .filter(q => q.id !== targetQ.id)
+            .map(q => ({ question: q, similarity: computeSimilarity(targetQ, q) }))
+            .filter(s => s.similarity >= threshold)
+            .sort((a, b) => b.similarity - a.similarity);
+        return scored.slice(0, maxResults).map(s => s.question);
+    }
+
+    return { computeSimilarity, findSimilar, extractKeywords };
 })();
 
 
